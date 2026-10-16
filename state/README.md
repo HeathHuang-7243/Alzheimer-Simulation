@@ -1,5 +1,9 @@
 # 仓库文件状态
 
+新场景模拟使用 `simulations/active.json` 与 `simulations/runs/<simulation_id>/`，每次包含独立的 `run.json`、`background.json`、`memory.json` 和 `dimensions/` 下十二份带时间戳的源文件。完整结构、重置与继续规则见[新协议](../docs/scenario-onboarding.md)。新建先准备草稿，确认启动后才清理同用户上一活跃新格式run；继续不清空。不跨用户、ID或旧版记忆检索。
+
+以下是保留的旧版兼容结构，新场景模拟不读取它：
+
 真实状态由文件工具写入本仓库目录：
 
 ```text

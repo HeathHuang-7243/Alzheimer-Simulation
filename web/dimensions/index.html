@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="用十二个维度理解记忆、性格与一次对话。了解日常机制、AD角色模拟的边界，以及可以自由跳过的角色设定问题。">
+  <title>一次对话的十二个维度 · Alzheimer Simulation</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#explore">跳到十二个维度</a>
+  <header class="masthead page-width">
+    <a class="brand" href="#top" aria-label="Alzheimer Simulation，返回页首">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>ALZHEIMER<span class="brand-sub">SIMULATION · 研究手记</span></span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="#explore">认识维度</a>
+      <a href="#before">设定之前</a>
+      <a class="repository-link" href="https://github.com/HeathHuang-7243/Alzheimer-Simulation" target="_blank" rel="noopener noreferrer">项目仓库 <span aria-hidden="true">↗</span><span class="sr-only">（新窗口）</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero page-width" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-line"></span> 一份关于对话的认知地图</p>
+        <h1 id="hero-title">一次对话，<br>不止一种<span class="title-accent">能力</span>。</h1>
+        <p class="hero-intro">记住一句约定、理解一个暗示、找到一个词。<br class="desktop-break">看似自然的交谈，连接着许多不同的过程。</p>
+        <p class="hero-note">从十二个维度认识它们，再决定你想怎样设定一个虚构角色。这里是入门阅读，不是认知测试或诊断工具。</p>
+        <a class="primary-link" href="#explore">开始探索 <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-map" aria-hidden="true">
+        <div class="map-topline"><span>FUNCTIONAL MAP</span><span>01 — 12</span></div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+        <div class="map-line map-line-one"></div><div class="map-line map-line-two"></div>
+        <span class="map-dot dot-a"></span><span class="map-dot dot-b"></span><span class="map-dot dot-c"></span><span class="map-dot dot-d"></span>
+        <span class="map-label label-a">记忆<span>MEMORY</span></span>
+        <span class="map-label label-b">情绪<span>AFFECT</span></span>
+        <span class="map-label label-c">行动<span>ACTION</span></span>
+        <span class="map-label label-d">自我<span>SELF</span></span>
+        <div class="map-center"><span>对话</span><small>CONVERSATION</small></div>
+        <p class="map-caption">彼此连接，也可以分别理解。</p>
+      </div>
+    </section>
+
+    <section class="reading-note page-width" aria-label="阅读提示">
+      <p><span class="note-number">12</span><span>个维度<br><small>各有作用，相互影响</small></span></p>
+      <p><span class="note-icon" aria-hidden="true">↗</span><span>从日常例子出发<br><small>先理解，再选择设定</small></span></p>
+      <p><span class="note-icon" aria-hidden="true">○</span><span>没有标准答案<br><small>可以跳过，之后仍可编辑</small></span></p>
+    </section>
+
+    <section id="explore" class="explore-section page-width" aria-labelledby="explore-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE TWELVE DIMENSIONS</p><h2 id="explore-title">从你熟悉的日常开始。</h2></div>
+        <div class="progress-block" aria-label="本页阅读进度">
+          <span><strong id="read-count">0</strong> / 12 已读</span>
+          <div class="progress-track" role="progressbar" aria-label="已标记阅读的维度" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><span id="progress-fill"></span></div>
+          <small>仅本次页面打开期间保留</small>
+        </div>
+      </div>
+      <div class="explore-toolbar">
+        <div class="category-filters" role="group" aria-label="按主题筛选">
+          <button type="button" class="filter-button active" data-category="all" aria-pressed="true">全部维度 <span>12</span></button>
+          <button type="button" class="filter-button" data-category="cognition" aria-pressed="false">认知与表达 <span>5</span></button>
+          <button type="button" class="filter-button" data-category="relating" aria-pressed="false">情绪与关系 <span>4</span></button>
+          <button type="button" class="filter-button" data-category="agency" aria-pressed="false">自我与参与 <span>3</span></button>
+        </div>
+        <label class="search-field" for="dimension-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="sr-only">搜索维度、例子或问题</span><input id="dimension-search" type="search" placeholder="搜索记忆、共情、选择…" autocomplete="off" maxlength="100"></label>
+      </div>
+      <p id="results-status" class="results-status" role="status" aria-live="polite">正在准备十二个维度…</p>
+      <div id="dimension-grid" class="dimension-grid" aria-label="维度卡片"></div>
+      <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">⌕</span><h3>暂时没有找到这个词。</h3><p>试试“说话”“主动”“经历”，或回到全部维度。</p><button class="text-button" id="clear-filters" type="button">清除筛选与搜索 <span aria-hidden="true">↗</span></button></div>
+      <p id="load-error" class="load-error" role="alert" hidden>内容未能加载。请刷新页面，或通过本地 HTTP 服务打开此文件夹。<button type="button" id="retry-load" class="text-button">重新加载</button></p>
+      <noscript><p class="load-error">此页的筛选和维度详情需要 JavaScript。也可以阅读<a href="https://github.com/HeathHuang-7243/Alzheimer-Simulation/tree/feature/alzheimerAffected/.agents/alzheimer/definitions">仓库中的十二份定义</a>。</p></noscript>
+    </section>
+
+    <section id="before" class="before-section" aria-labelledby="before-title">
+      <div class="page-width before-grid">
+        <div><p class="eyebrow">BEFORE YOU SET THE SCENE</p><h2 id="before-title">你可以了解，<br>也可以先留白。</h2><p class="before-intro">这些维度用于丰富虚构角色，并不要求你交出真实个人的健康、家庭或生活资料。</p></div>
+        <div class="principles">
+          <article><span>01</span><div><h3>设定问题都可以跳过</h3><p>如果不提供细节，启动流程会用带有来源标记的虚构内容补齐背景。生成内容可以检查、修改，不会被当作真实个人事实。</p></div></article>
+          <article><span>02</span><div><h3>一个维度的变化，不代表全部改变</h3><p>找词、记忆、动机和情感关切可能分化。疾病研究提供边界，工程参数与角色台词仍需验证；预设不能代表所有患者。</p></div></article>
+          <article><span>03</span><div><h3>这页只负责解释</h3><p>本页不收集角色资料、不启动模拟，也不保存搜索与阅读进度。回到对话后再选择设定；正式启动仍需确认角色卡并按项目要求开启平台记忆。</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="evidence-note page-width" aria-labelledby="evidence-title"><span class="evidence-symbol" aria-hidden="true">※</span><div><h2 id="evidence-title">阅读证据，也阅读它的边界。</h2><p>“正常机制”是便于理解的功能说明；AD 相关文献并非完整的正常认知教材。每个维度附有证据卡，标明实际阅读范围与人群限制。模拟预设尚未经临床校准，不能用于诊断、病程预测或现实能力裁决；AI 的角色表达也不证明其具有主观体验。</p><a class="text-button" href="https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/research/literature-review.md" target="_blank" rel="noopener noreferrer">阅读完整研究综述 <span aria-hidden="true">↗</span><span class="sr-only">（新窗口）</span></a></div></section>
+  </main>
+
+  <footer class="page-width site-footer"><div class="footer-brand">ALZHEIMER SIMULATION<span>以证据为起点，为差异留出空间。</span></div><a href="#top">回到页首 ↑</a><p>静态教育页面 · 无账号 · 无追踪 · 无持久化存储</p></footer>
+
+  <dialog id="dimension-dialog" class="dimension-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header"><span id="dialog-position" class="dialog-position"></span><button type="button" id="close-dialog" class="close-button" aria-label="关闭维度详情"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button></div>
+    <div id="dialog-content" class="dialog-content"></div>
+    <div class="dialog-footer"><button id="previous-dimension" type="button" class="icon-text-button" aria-label="上一个维度">← <span>上一个</span></button><button id="mark-read" type="button" class="mark-read-button" aria-pressed="false">标记已读 <span aria-hidden="true">✓</span></button><button id="next-dimension" type="button" class="icon-text-button" aria-label="下一个维度"><span>下一个</span> →</button></div>
+  </dialog>
+  <div id="reader-announcement" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "character": {"based_on_known_person": false},
+  "generation": {"fill_missing": true},
+  "initial_profile": "mild",
+  "progression": {"mode": "default"},
+  "clock": {"mode": "real", "start_at": null, "timezone": "UTC"}
+}

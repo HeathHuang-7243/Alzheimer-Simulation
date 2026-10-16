@@ -1,3 +1,5 @@
+> 新的场景问卷、simulation_id、默认/缓慢/固定演变及独立十二维文件使用 [scenario-onboarding.md](scenario-onboarding.md) 和 `scripts/simulation.py`。以下命令为保留的旧版兼容协议，不要在同一次新格式模拟中混用状态。
+
 # 文件状态与记忆协议
 
 本工具只读写仓库内JSON，不生成模型回答，不联网，也不启用平台记忆。需要 Python 3.10+ 和支持 `fcntl` 的 Linux/macOS；Windows可使用WSL。无需安装依赖。

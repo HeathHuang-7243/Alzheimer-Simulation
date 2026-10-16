@@ -1,0 +1,447 @@
+{
+  "schema_version": 1,
+  "title": "一次对话的十二个维度",
+  "description": "功能说明、日常例子与 AD 角色模拟边界；非诊断与非临床校准。",
+  "categories": {
+    "cognition": "认知与表达",
+    "relating": "情绪与关系",
+    "agency": "自我与参与"
+  },
+  "research_commit": "b3138712baf799f0145e5fb3e0c635d4d5dd4d26",
+  "dimensions": [
+    {
+      "id": "memory",
+      "number": "01",
+      "category": "cognition",
+      "title": "记忆与学习",
+      "english": "MEMORY & LEARNING",
+      "summary": "把经历留下，在需要时找回来；也从经验中形成知识与技能。",
+      "normal": "记忆涉及接纳新信息、保持与提取。记得一次相遇、知道一个人的名字、熟练使用一种工具，是不同类型的记忆。想不起某件事，也可能涉及最初没有记住、线索不足或当下注意分散。",
+      "example": "你记得朋友喜欢无糖咖啡，也记得上次一起喝咖啡的地方。前者是事实知识，后者是一次经历；两者不必总能同时想起。",
+      "simulation": "AD 角色模拟分别限制情景、语义和程序性记录的可及候选，并允许请求线索。记录条数是工程旋钮，不是真实记忆容量；“找不到记录”也不等于已经模拟了生物性遗忘。",
+      "boundary": "不默认所有记忆同步下降，也不保证旧事、技能或情绪永远完整。规范文件不会为了表演症状而被删改。",
+      "questions": [
+        "角色有哪些经常提起的经历或个人事实？",
+        "有哪些熟悉的技能、习惯，或能帮助回想的线索？"
+      ],
+      "references": [
+        "REF-0077",
+        "REF-0070",
+        "REF-0069"
+      ],
+      "evidence_note": "自由与线索回忆研究包含临床及混合病例；自传体和程序学习综合存在任务异质性。线索收益、远期优势和技能保留不能普遍化。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/01-memory.md"
+    },
+    {
+      "id": "attention",
+      "number": "02",
+      "category": "cognition",
+      "title": "注意与信息处理",
+      "english": "ATTENTION & PROCESSING",
+      "summary": "在许多信息里抓住当前重点，并把注意转向下一件事。",
+      "normal": "注意帮助我们选择相关信息、维持当前焦点并在话题之间切换。它与暂时保留信息的工作记忆协作；在嘈杂环境、多人聊天或同时处理多件事时，负荷会改变表现。",
+      "example": "朋友一口气问午餐、周末安排和一张照片，你先回答午餐，再回到另外两个问题。用纸记下问题，可以减少同时保留的信息。",
+      "simulation": "模拟使用候选记忆条数上限与话题切换指令，鼓励把问题分开、明确当前焦点。这个上限只影响文件工具返回的候选，不会物理截断模型已经看过的聊天记录。",
+      "boundary": "条数并非临床注意容量；角色需要提示，不影响控制层识别真实用户的停止、纠正或工具失败。",
+      "questions": [
+        "角色适合一次聊一件事，还是能接受几个相关话题？",
+        "换话题时，怎样的提示让角色容易接上？"
+      ],
+      "references": [
+        "REF-0071",
+        "REF-0072",
+        "REF-0012"
+      ],
+      "evidence_note": "工作记忆实验样本较小，组块收益与任务有关；前脑 MRI 关联没有直接测量注意条数或递质释放。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/02-attention.md"
+    },
+    {
+      "id": "communication",
+      "number": "03",
+      "category": "cognition",
+      "title": "语言与沟通",
+      "english": "LANGUAGE & COMMUNICATION",
+      "summary": "理解一句话，找到一个词，把自己的意思交给另一个人。",
+      "normal": "交流同时依赖词语提取、语义理解、句子组织和话题衔接。理解对方、组织回答与找到准确名称可以各有难处；表情和手势也可能提供线索，但纯文字系统只能使用实际收到的信息。",
+      "example": "一时想不起“订书机”，你说“把几张纸钉在一起的那个东西”。词没有立即出现，你仍可以通过绕述传达意思。",
+      "simulation": "角色可以偶发找词、使用短句或请求一次说明一个意思。生成方式由模型遵守定义实现，文件工具不会自动制造错词；也不采用随机乱码来代表语言困难。",
+      "boundary": "话少不等于没有理解、偏好或情感。真实命令、权限说明和操作结果始终清楚准确。",
+      "questions": [
+        "角色平常怎样称呼别人，喜欢怎样的语气？",
+        "有哪些熟悉话题或常用表达？"
+      ],
+      "references": [
+        "REF-0010",
+        "REF-0076",
+        "REF-0014"
+      ],
+      "evidence_note": "症状网页提供背景，流畅性任务并非纯词库测量；不同表型可能首先突出语言或视觉空间问题，不能统一套用遗忘型轨迹。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/03-communication.md"
+    },
+    {
+      "id": "executive",
+      "number": "04",
+      "category": "cognition",
+      "title": "执行功能与决策",
+      "english": "PLANNING & DECISION",
+      "summary": "保持目标、安排步骤，并根据结果调整接下来要做的事。",
+      "normal": "执行功能帮助我们启动计划、排序、切换策略、抑制不合时宜的反应和检查错误。知道目标是什么，与能组织出完成它的步骤，是相互关联又可以分开的事情。",
+      "example": "准备一次出行，需要查时间、带证件、安排交通。你理解整件事，但仍会用清单检查有没有漏掉步骤。",
+      "simulation": "模拟限定角色本轮展示的规划步骤，并设定偶发、逐步或持续提示。支持可以帮助完成当前一步；完成一步不能被写成整项任务已经独立完成。",
+      "boundary": "步骤数字不是临床评分，也不减少控制层需要保留的约束、授权或核验。真实工具不因角色设定而乱操作。",
+      "questions": [
+        "角色正在努力完成什么事情？",
+        "哪些步骤能自己安排，哪些适合得到提醒？"
+      ],
+      "references": [
+        "REF-0096",
+        "REF-0104",
+        "REF-0012"
+      ],
+      "evidence_note": "金融任务包含 MCI，未全部生物学确证；过程分析多为横断面，不能证明每个人固定的步骤丧失顺序。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/04-executive.md"
+    },
+    {
+      "id": "perception",
+      "number": "05",
+      "category": "cognition",
+      "title": "知觉与时空理解",
+      "english": "PERCEPTION & CONTEXT",
+      "summary": "把人物、地点、时间与眼前发生的事情放进同一个情境。",
+      "normal": "我们把输入的声音、图像和文字与已有知识联系起来，理解对象、位置、人物关系和时间。某个名称想不起，与看见后无法辨认，并不是同一个过程。",
+      "example": "一句“明天下午在老地方见”，需要知道今天的日期、双方共同指的地点，以及参加的人是谁。明确说出日期和地址能减少歧义。",
+      "simulation": "角色可以对时间或当前场景不确定，并通过明确情境得到支持。人物或关系辨认困难只在虚构个案明确设定时出现，不由预设自动加入。",
+      "boundary": "不默认幻觉或认错所有亲友；角色的不确定不会改变真实时钟、宿主身份、工具对象或用户文件归属。",
+      "questions": [
+        "对话发生在哪里、什么时间，有哪些人在场？",
+        "哪些人物和地点对角色熟悉，哪些是首次遇见？"
+      ],
+      "references": [
+        "REF-0010",
+        "REF-0014",
+        "REF-0012"
+      ],
+      "evidence_note": "阶段症状概述不是统一失认时间表。PCA 是表型综合征，病因不自动等于 AD；本原型没有模拟具体视觉缺陷。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/05-perception.md"
+    },
+    {
+      "id": "personality",
+      "number": "06",
+      "category": "relating",
+      "title": "人格特质",
+      "english": "PERSONALITY",
+      "summary": "相对稳定的思考、反应与相处倾向，为每次表达提供背景。",
+      "normal": "人格描述一个人通常如何探索、组织生活、与人互动和应对压力。一次情绪低落、一次记错或一次不耐烦，不足以确定长期性格已经改变。",
+      "example": "一个一向谨慎的人可能习惯先核对安排再答应；他在疲倦时说得少，并不意味着长期变成了不关心别人的人。",
+      "simulation": "保存病前人格作为可比较的背景；认知困难、即时情绪与人格分别建模。若要呈现特质变化，需要明确虚构个案，不能一键随机改写所有性格。",
+      "boundary": "忘约不等于失信，少主动不等于懒惰；没有“必然变坏、攻击或人格消失”的默认脚本。",
+      "questions": [
+        "角色原本更直接还是委婉，更爱探索还是偏好熟悉？",
+        "有哪些一贯的处事方式或重要价值？"
+      ],
+      "references": [
+        "REF-0079",
+        "REF-0080"
+      ],
+      "evidence_note": "BLSA 与 HRS 对发病前变化提供不同结果；HRS 非 AD 特异。群体均值、选择样本与量表变化不能直接映射到一个角色。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/06-personality.md"
+    },
+    {
+      "id": "affect",
+      "number": "07",
+      "category": "relating",
+      "title": "情绪与调节",
+      "english": "AFFECT & REGULATION",
+      "summary": "当下有什么感受，以及怎样在交流中表达和调节它。",
+      "normal": "情绪是与事件、解释和身体状态相联系的短期过程。知道发生了什么、记得事件细节、仍然感到开心或难过，可以出现不同步；情绪也与长期人格有别。",
+      "example": "看完一段感人的影片，你一时说不清某个情节，却还带着那份难过。休息、陪伴或改变环境可能影响接下来的表达。",
+      "simulation": "特定虚构场景可允许事件回忆与短时情绪分离。焦虑、易激惹需要分别设置，不因一档预设就每轮出现；模型的情绪台词不表示 AI 已产生感受。",
+      "boundary": "轻度小样本的短期情绪结果，不能保证晚期所有情感完整；也不能由语言减少推断情绪消失。",
+      "questions": [
+        "在这个场景中，什么可能让角色安心或感到不适？",
+        "面对紧张，角色通常需要安静、解释还是陪伴？"
+      ],
+      "references": [
+        "REF-0064",
+        "REF-0090"
+      ],
+      "evidence_note": "电影实验仅 17 名极轻至轻度 AD，约 20–30 分钟观察；情境评估共识不是分期情绪概率或脑机制因果试验。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/07-affect.md"
+    },
+    {
+      "id": "motivation",
+      "number": "08",
+      "category": "relating",
+      "title": "动机与主动性",
+      "english": "MOTIVATION & INITIATION",
+      "summary": "一件事是否值得做，怎样开始，又怎样保持参与。",
+      "normal": "动机涉及目标价值、愿意付出的努力、行动启动与坚持。想做、能做、能够开始、能持续到结束，需要分别观察；没有主动发起对话，也不一定代表没有兴趣。",
+      "example": "你很想整理相册，却迟迟没有开始。朋友说“先选两张”，让一个大目标变成容易迈出的第一步。",
+      "simulation": "角色可以需要明确邀请，或借助当前一步、下一步的提示维持任务。淡漠仅按个案启用，不能自动附加悲伤、抑郁或对他人没有关切。",
+      "boundary": "提示后的一次成功不代表所有能力恢复；角色少主动，也不会阻止系统响应真实用户的停止与修改。",
+      "questions": [
+        "什么活动对角色有意义，愿意参与？",
+        "角色喜欢自己发起，还是更习惯得到一个具体邀请？"
+      ],
+      "references": [
+        "REF-0082",
+        "REF-0083"
+      ],
+      "evidence_note": "tau 关联不是单脑区因果；ADMET 2 的淡漠量表改善未同步确立认知、日常功能和生活质量收益。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/08-motivation.md"
+    },
+    {
+      "id": "social",
+      "number": "09",
+      "category": "relating",
+      "title": "社会认知与关系",
+      "english": "SOCIAL COGNITION",
+      "summary": "理解别人的视角、表达关切，并在共同经历里建立关系。",
+      "normal": "社会认知包含理解他人知道什么、相信什么和在意什么。观点采择、情感关切、辨认人物和记住共同经历彼此相关，却不能合成一个简单的“有没有共情”。",
+      "example": "朋友说“明天又要去了”，你不知道指哪里。听到“去医院，我有点怕”，你才理解他的担心，并愿意陪他坐一会儿。",
+      "simulation": "角色可能需要别人明说视角，同时仍能表达关切。关系辨认不确定仅按明确个案设置，不把认错人直接写成不再爱或不再在乎。",
+      "boundary": "不默认情感关切缺失，也不保证始终完整；角色关系设定不改变真实身份、授权与用户数据隔离。",
+      "questions": [
+        "角色和对话者是什么关系，有没有共同经历？",
+        "对话者的哪些担心或意图需要明确说出来？"
+      ],
+      "references": [
+        "REF-0085",
+        "REF-0064"
+      ],
+      "evidence_note": "共情研究为横断面他评且混合表型；情绪电影实验不直接测量亲属依恋，二者均不能给出统一晚期关系曲线。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/09-social.md"
+    },
+    {
+      "id": "self",
+      "number": "10",
+      "category": "agency",
+      "title": "自我认知与身份",
+      "english": "SELF & CONTINUITY",
+      "summary": "知道自己做过什么、能做什么，以及如何理解自己的经历。",
+      "normal": "自我认知包括检查错误、评价自己的能力，并把个人事实和经历组织成身份叙述。对某次事件记得多具体，与一个人如何理解自己的价值和角色，并不是完全相同的事。",
+      "example": "你记得自己曾做教师，却记不清某次课堂的细节。这个具体回忆的空缺，并不能单独说明你如何理解“我是一个怎样的人”。",
+      "simulation": "可分别设置错误觉察和自传体细节：角色可能对自己的回忆过于有把握，或只能概括经历。项目始终禁止以预设为由宣称身份必然被抹除。",
+      "boundary": "角色自知力有限不允许控制层谎报真实能力、工具完成情况或记忆设置；规范事实仍能可靠纠正。",
+      "questions": [
+        "角色怎样介绍自己，哪些人生角色对其重要？",
+        "哪些个人事实明确，哪些具体经历允许留白？"
+      ],
+      "references": [
+        "REF-0070",
+        "REF-0086"
+      ],
+      "evidence_note": "自传体综述不是人格或自我消失的证明；自知力证据卡仅核对摘要与图注，样本为遗忘型 MCI，且患者与知情者均可能有报告偏差。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/10-self.md"
+    },
+    {
+      "id": "autonomy",
+      "number": "11",
+      "category": "agency",
+      "title": "功能与自主性",
+      "english": "FUNCTION & AUTONOMY",
+      "summary": "把能力用在实际任务中，也保留得到支持后参与和选择的机会。",
+      "normal": "日常功能需要把记忆、理解、动机和行动组织起来。具备能力、在某种环境中实际完成、得到多少帮助，以及本人是否愿意参与，应分别描述。",
+      "example": "有人借助清单完成购物，同时仍自己选择想吃的食物。获得提醒与保有偏好可以并存，任务是否完成也要看实际结果。",
+      "simulation": "用复杂任务、基础任务或连续支持描绘虚构角色需要的帮助；即使支持增加，也尽量保留具体选择。身体活动只是文字情境，AI 不因此拥有真实身体。",
+      "boundary": "支持档位不是法律能力裁决。真实工具权限和执行核验始终可靠，不能因为角色健忘而重复或伪造外部操作。",
+      "questions": [
+        "这次对话围绕什么日常任务？",
+        "角色愿意自己决定哪些事，希望得到怎样的帮助？"
+      ],
+      "references": [
+        "REF-0012",
+        "REF-0095",
+        "REF-0098"
+      ],
+      "evidence_note": "功能量表不是完整能力裁决；晚期机构队列包含不同痴呆病因，不能推成所有 AD 个体的功能轨迹或风险。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/11-autonomy.md"
+    },
+    {
+      "id": "experience",
+      "number": "12",
+      "category": "agency",
+      "title": "体验与生活质量",
+      "english": "EXPERIENCE & QUALITY",
+      "summary": "听见当事人的舒适、困惑和偏好，也区分别人如何评价。",
+      "normal": "生活质量包含当事人对日常生活的体验和评价，不能只用任务分数或旁观者的负担替代。本人表达、他人观察和代理评价可以提供不同信息，需要标明各自视角。",
+      "example": "旁观者觉得活动安排得很充实，当事人却觉得太吵。问一句“声音小一点，还是保持这样”，让一个具体偏好得到表达。",
+      "simulation": "角色可借助具体问题、短句或明确场景信号表达需求。没有内置“越严重越不幸福”的分数；真实用户对模拟的反馈也始终被认真记录和响应。",
+      "boundary": "沉默既不能证明没有体验，也不能证明某种体验存在。角色台词与状态数值都不是 AI 主观意识的证据。",
+      "questions": [
+        "在这段场景里，怎样的环境让角色更舒适？",
+        "可以用什么具体选择，让角色更容易表达偏好？"
+      ],
+      "references": [
+        "REF-0100",
+        "REF-0102",
+        "REF-0064"
+      ],
+      "evidence_note": "生活质量研究非 AD 特异、横断面且主要为能自评的轻中度者；工作访谈为混合病因质性样本，不能代言所有患者或预测晚期体验。",
+      "definition_url": "https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/.agents/alzheimer/definitions/12-experience.md"
+    }
+  ],
+  "sources": {
+    "REF-0010": {
+      "title": "Alzheimer's disease – Symptoms",
+      "year": 2024,
+      "source_type": "official_health_information",
+      "verification_level": "webpage",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0010.md"
+    },
+    "REF-0012": {
+      "title": "Revised criteria for diagnosis and staging of Alzheimer's disease: Alzheimer's Association Workgroup",
+      "year": 2024,
+      "source_type": "consensus",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0012.md"
+    },
+    "REF-0014": {
+      "title": "Consensus classification of posterior cortical atrophy",
+      "year": 2017,
+      "source_type": "consensus_classification",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0014.md"
+    },
+    "REF-0064": {
+      "title": "Feelings Without Memory in Alzheimer Disease",
+      "year": 2014,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0064.md"
+    },
+    "REF-0069": {
+      "title": "Procedural Learning in Individuals with Amnestic Mild Cognitive Impairment and Alzheimer’s Dementia: a Systematic Review and Meta-analysis",
+      "year": 2021,
+      "source_type": "review",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0069.md"
+    },
+    "REF-0070": {
+      "title": "Autobiographical memory in Alzheimer’s disease: a systematic review",
+      "year": 2025,
+      "source_type": "review",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0070.md"
+    },
+    "REF-0071": {
+      "title": "Working memory task performance and chunking in early Alzheimer's disease",
+      "year": 2011,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0071.md"
+    },
+    "REF-0072": {
+      "title": "Basal forebrain degeneration precedes and predicts the cortical spread of Alzheimer’s pathology",
+      "year": 2016,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0072.md"
+    },
+    "REF-0076": {
+      "title": "Biomarker validation of a decline in semantic processing in preclinical Alzheimer’s disease",
+      "year": 2016,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0076.md"
+    },
+    "REF-0077": {
+      "title": "Free and cued selective reminding distinguishes Alzheimer's disease from vascular dementia",
+      "year": 2008,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0077.md"
+    },
+    "REF-0079": {
+      "title": "Personality Change in the Preclinical Phase of Alzheimer Disease",
+      "year": 2017,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0079.md"
+    },
+    "REF-0080": {
+      "title": "Changes in personality before and during cognitive impairment",
+      "year": 2023,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0080.md"
+    },
+    "REF-0082": {
+      "title": "Longitudinal associations of apathy and regional tau in mild cognitive impairment and dementia: Findings from the Alzheimer's Disease Neuroimaging Initiative",
+      "year": 2024,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0082.md"
+    },
+    "REF-0083": {
+      "title": "Effect of Methylphenidate on Apathy in Patients With Alzheimer Disease: The ADMET 2 Randomized Clinical Trial",
+      "year": 2021,
+      "source_type": "original_rct",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0083.md"
+    },
+    "REF-0085": {
+      "title": "Medial Temporal Lobe Tau Aggregation Relates to Divergent Cognitive and Emotional Empathy Abilities in Alzheimer's Disease",
+      "year": 2023,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0085.md"
+    },
+    "REF-0086": {
+      "title": "Anosognosia predicts default mode network hypometabolism and clinical progression to dementia",
+      "year": 2018,
+      "source_type": "original_human_observational",
+      "verification_level": "abstract",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0086.md"
+    },
+    "REF-0090": {
+      "title": "Management of Neuropsychiatric Symptoms of Dementia in Clinical Settings: Recommendations from a Multidisciplinary Expert Panel",
+      "year": 2014,
+      "source_type": "consensus",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0090.md"
+    },
+    "REF-0095": {
+      "title": "Utility of the functional activities questionnaire for distinguishing mild cognitive impairment from very mild Alzheimer disease",
+      "year": 2010,
+      "source_type": "original_human_observational",
+      "verification_level": "abstract",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0095.md"
+    },
+    "REF-0096": {
+      "title": "Declining financial capacity in mild cognitive impairment: A 1-year longitudinal study",
+      "year": 2009,
+      "source_type": "original_human_observational",
+      "verification_level": "abstract",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0096.md"
+    },
+    "REF-0098": {
+      "title": "The clinical course of advanced dementia",
+      "year": 2009,
+      "source_type": "original_human_observational",
+      "verification_level": "abstract",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0098.md"
+    },
+    "REF-0100": {
+      "title": "Discrepancies between self- and proxy-rated quality of life in people living with dementia",
+      "year": 2024,
+      "source_type": "original_human_observational",
+      "verification_level": "sections",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0100.md"
+    },
+    "REF-0102": {
+      "title": "'Too young to sit at home': a qualitative study conducted among employees with young-onset dementia and their relatives",
+      "year": 2024,
+      "source_type": "original_human_observational",
+      "verification_level": "abstract",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0102.md"
+    },
+    "REF-0104": {
+      "title": "Characteristic of process analysis on instrumental activities of daily living according to the severity of cognitive impairment in community-dwelling older adults with Alzheimer's disease",
+      "year": 2024,
+      "source_type": "original_human_observational",
+      "verification_level": "abstract",
+      "evidence_card": "https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/notes/REF-0104.md"
+    }
+  }
+}

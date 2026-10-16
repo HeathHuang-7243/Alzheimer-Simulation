@@ -1,0 +1,20 @@
+{
+  "character": {
+    "based_on_known_person": false,
+    "counterpart_known": true,
+    "recognizes_counterpart": "yes",
+    "name": "林岚（虚构）",
+    "premorbid_personality": "谨慎、耐心，喜欢听完别人的话再回答。",
+    "speech_style": "普通话，句子简短，喜欢用生活中的例子。"
+  },
+  "scene": {
+    "setting": "虚构社区阅览室，下午，环境安静。",
+    "goal": "和熟悉的志愿者一起整理旧照片。",
+    "recent_experiences": [{"description": "上周参加了社区植物展。", "event_at": null, "time_note": "上周，具体日期未设定"}]
+  },
+  "dimension_notes": {"personality": "不自动表现为易怒；保留耐心的表达习惯。"},
+  "generation": {"fill_missing": true},
+  "initial_profile": "mild",
+  "progression": {"mode": "slow", "onset_days": 10, "duration_days": 3, "max_profile": "moderate"},
+  "clock": {"mode": "manual", "start_at": "2026-10-16T09:00:00Z", "timezone": "UTC"}
+}

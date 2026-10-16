@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "purpose": "由宿主在聊天中逐步询问；这是问卷定义，不是自动运行的网页表单。",
+  "education": {
+    "prompt": "你想了解更多吗？",
+    "url": "https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site",
+    "local_source": "web/dimensions/index.html",
+    "optional": true,
+    "if_declined": "跳过说明或补充信息不会阻止准备设定；未提供的叙事内容可随机生成，明确标记为虚构。",
+    "if_inaccessible": "在线说明页目前为私有站点；无访问权限时提供仓库源码并按web/dimensions/README.md启动本地静态预览，仍可跳过阅读继续问卷。"
+  },
+  "steps": [
+    {
+      "id": "new_or_resume",
+      "prompt": "这次要新建一个模拟，还是继续已有 simulation_id？",
+      "options": [
+        "新建",
+        "继续"
+      ],
+      "required": true,
+      "rule": "新建先prepare再确认start；继续resume同一ID，不清空状态。不得自行把一次新聊天视为新模拟。"
+    },
+    {
+      "id": "prototype",
+      "prompt": "这个角色以你认识的人为原型吗？可以只用化名，也可以完全虚构。",
+      "field": "character.based_on_known_person",
+      "options": [
+        "不是",
+        "是"
+      ],
+      "follow_up_if_yes": "如果愿意，请描述与你的关系、病前性格的具体例子、说话习惯、兴趣、生活经历；已观察到的变化请另行说明。",
+      "follow_up_if_no": "如果愿意，请提供第一次遇到这个角色的地点、当时发生的事，以及最近1—3件经历；不记得日期可只写大概时间。",
+      "optional_narrative": true,
+      "rule": "用户认识原型，不等于角色认识或认得当前对话者；缺失内容生成时只能是虚构替代。"
+    },
+    {
+      "id": "relationship",
+      "prompt": "故事里，这个角色原本认识对话者吗？现在是否认得对方？",
+      "fields": [
+        "character.counterpart_known",
+        "character.recognizes_counterpart"
+      ],
+      "recognition_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "rule": "不从疾病预设或关系名称自动推断辨认、信任或感情。未回答时保留未知/虚构设定来源。"
+    },
+    {
+      "id": "scene",
+      "prompt": "对话发生在什么地方？你希望这次一起做什么？最近有哪些经历可能影响这次对话？",
+      "fields": [
+        "scene.setting",
+        "scene.first_meeting",
+        "scene.recent_experiences",
+        "scene.goal"
+      ],
+      "optional": true,
+      "rule": "经历发生时间event_at与录入时间分开；不知道确切时间时用time_note，不倒推出精确日期。"
+    },
+    {
+      "id": "severity",
+      "prompt": "模拟从哪个工程预设开始？请选择，或明确采用轻度示例。",
+      "field": "initial_profile",
+      "options": [
+        "baseline",
+        "preclinical",
+        "mild",
+        "moderate",
+        "severe"
+      ],
+      "default_if_explicitly_accepted": "mild",
+      "rule": "不根据用户或原型的描述做诊断；不是临床分期量表。必须在确认卡展示所选值。"
+    },
+    {
+      "id": "progression",
+      "prompt": "选择默认模式、缓慢发展，或固定状态。",
+      "field": "progression.mode",
+      "options": [
+        "default",
+        "slow",
+        "fixed"
+      ],
+      "labels": {
+        "default": "默认模式",
+        "slow": "缓慢发展",
+        "fixed": "固定状态"
+      },
+      "default_if_explicitly_accepted": "default",
+      "follow_up_default": "哪些词或场景关联可以触发变化？默认命中后20%机会、变化后冷却3个有效对话轮次、每次最多一个维度升一级。可改概率、词条、可变维度和上限。",
+      "follow_up_slow": "大约第几天首次开始变化？开始后用多少天逐步变化？使用现实时间，还是手动推进的故事时间？",
+      "rule": "缓慢发展仅首次起点在N天±1天抽取一次；之后分散安排步骤。两种进展都是虚构实验规则，不代表典型AD生物病程。"
+    },
+    {
+      "id": "dimensions",
+      "prompt": "你想了解更多吗？可以打开十二维介绍，再挑想补充的部分；也可以全部跳过。",
+      "field": "dimension_notes",
+      "education": true,
+      "optional": true,
+      "rule": "不连续追问十二个必填项。未提供的叙事内容随机生成，标明generated_fiction、种子、配方版本；以后可编辑。"
+    },
+    {
+      "id": "confirmation",
+      "prompt": "这是本次的设定卡：包括simulation_id、背景及来源、初始预设、时间基准、演变规则和重置范围。你可以修改，或确认开始。",
+      "required": true,
+      "rule": "prepare不清理旧run；用户确认完整设定且明确自述开启平台记忆后才start。拒绝提供叙事内容不等于拒绝或同意这些控制设置。"
+    }
+  ],
+  "dimension_prompts": {
+    "memory": "有哪些重要经历、熟悉的技能或容易混淆的近期事情？提示是否有帮助？",
+    "attention": "安静或嘈杂环境、多人交谈、长句或疲劳会怎样影响专注？",
+    "communication": "平时怎么称呼别人、用什么语言、说话节奏怎样？喜欢怎样的解释？",
+    "executive": "做一顿饭、安排出门等多步骤任务时习惯怎样计划？需要哪种支持？",
+    "perception": "场景里有哪些熟悉地点、时间线索、物品和容易误解的空间关系？",
+    "personality": "病前性格有什么具体例子？哪些喜好应持续，哪些变化已有明确设定？",
+    "affect": "什么带来安心或压力？通常怎样表达、缓和情绪？",
+    "motivation": "在意什么目标？愿意做什么、是否需要别人提示开始？",
+    "social": "对话者与角色是什么关系？界限、信任和回应他人的方式怎样？",
+    "self": "角色怎样介绍自己、看待自己的能力和人生经历？",
+    "autonomy": "哪些日常事情自己做、需要提醒、共同完成或由别人协助？",
+    "experience": "这次什么样的节奏和表达会让角色更舒服？怎样回应明确的不适或疲劳？"
+  }
+}

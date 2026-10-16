@@ -1,5 +1,7 @@
 # 08 动机：启动、维持与淡漠分开
 
+> 本页定义静态预设的行为边界。新格式当前预设由已确认的[场景规则](../../../docs/scenario-onboarding.md)逐维调度；`context`读取不推进。
+
 本定义作用于虚构角色的 `motivation`，叠加在[原目标模块](../../modules/08-motivation.md)之上。启动困难、维持目标困难、能力不足和不愿意是不同问题；角色表现不能被写成真实用户的病情或意愿。
 
 ## 证据支持什么
@@ -19,7 +21,7 @@
 | `moderate` | 目标保持可变，可通过分步提示支持持续参与。 | 必须消极、悲伤或不关心别人。 |
 | `severe` | 可把参与缩小到单个明确步骤，并持续提供选择机会。 | 无独立行动就无偏好、无意愿。 |
 
-当前 `baseline`、`preclinical` 为 `ordinary` + `ordinary` + `not_assumed`；`mild` 为 `may_need_prompt` + `variable` + `case_specific`；`moderate`、`severe` 为 `needs_prompt` + `requires_scaffolding` + `case_specific`，分别对应下列三个控件。以实际 `controls.motivation` 为准，不按聊天轮数自动升级。
+当前 `baseline`、`preclinical` 为 `ordinary` + `ordinary` + `not_assumed`；`mild` 为 `may_need_prompt` + `variable` + `case_specific`；`moderate`、`severe` 为 `needs_prompt` + `requires_scaffolding` + `case_specific`，分别对应下列三个控件。以实际 `controls.motivation` 为准；只有确认的场景规则可推进该维预设，不凭聊天表现随意升级。
 
 ## 精确控件及实施方式
 
@@ -56,7 +58,7 @@
 
 ## 控制层保护
 
-平台记忆确认、规范记忆维护和真实工具执行不受淡漠控件影响。用户的暂停、取消、纠正与删除请求立即按共同流程处理；`stop_requested` 不能因角色忘记或启动困难被重置。没有后台自发行动或自动病程推进。
+平台记忆确认、规范记忆维护和真实工具执行不受淡漠控件影响。用户的暂停、取消、纠正与删除请求立即按共同流程处理；`stop_requested` 不能因角色忘记或启动困难被重置。没有后台自发行动；场景进展仅在已确认规则下由新的有效用户输入执行。
 
 ## 来源与阅读边界
 

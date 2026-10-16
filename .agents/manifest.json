@@ -81,5 +81,12 @@
       "state_key": "experience"
     }
   ],
-  "condition_manifest": ".agents/alzheimer/manifest.json"
+  "condition_manifest": ".agents/alzheimer/manifest.json",
+  "scenario": {
+    "questionnaire": ".agents/scenario/questionnaire.json",
+    "defaults": ".agents/scenario/defaults.json",
+    "protocol": "docs/scenario-onboarding.md",
+    "runtime": "scripts/simulation.py",
+    "education": "web/dimensions/index.html"
+  }
 }

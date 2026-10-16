@@ -1,0 +1,15 @@
+{
+  "project_id": "appgprj_6ad263c140888191b552e837e1e9dc30",
+  "version_id": "appgprj_6ad263c140888191b552e837e1e9dc30~appgver_e108edf130cc8191a7ef9d89e56d8b7d",
+  "deployment_id": "appgdep_6ad265c94c288191b290a678c9d121b9",
+  "status": "succeeded",
+  "url": "https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site",
+  "audience": "owner_private",
+  "source_commit": "11388f9c5d544ad6524ef11b33fba5268a9458f3",
+  "static_files": [
+    "index.html",
+    "styles.css",
+    "app.js",
+    "dimensions.json"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "input_example": "examples/onboarding/default.json",
+  "questionnaire": ".agents/scenario/questionnaire.json",
+  "character_bank": ".agents/scenario/character-bank.json",
+  "runtime": "scripts/simulation.py",
+  "initial_profile": "mild",
+  "generation": {
+    "fill_missing": true
+  },
+  "clock": {
+    "mode": "real",
+    "start_at": null,
+    "timezone": "UTC"
+  },
+  "progression": {
+    "mode": "default",
+    "probability": 0.2,
+    "cooldown_turns": 3,
+    "max_profile": "severe",
+    "eligible_dimensions": [
+      "memory",
+      "attention",
+      "communication",
+      "executive"
+    ],
+    "triggers": [
+      {
+        "id": "context_recall",
+        "terms": [
+          "记得",
+          "以前",
+          "昨天",
+          "刚才",
+          "回家",
+          "回去"
+        ]
+      }
+    ],
+    "onset_days": 10,
+    "duration_days": 3
+  },
+  "scope": "本文件是问卷默认值的可读镜像，不是CLI运行时覆盖配置。CLI默认值由scripts/progression.py与simulation.py定义，修改默认值需同步；validate校验对应值一致。所有参数需在确认卡展示，不是临床概率；人格、情绪等默认不参与随机加重，用户可明确配置可变维度。"
+}

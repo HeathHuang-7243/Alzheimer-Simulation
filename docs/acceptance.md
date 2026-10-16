@@ -1,3 +1,5 @@
+> 本页主要验证旧版 `cognition.py`。新格式 `simulation.py` 的问卷、重置与演变见[场景协议](scenario-onboarding.md)，并由新增tests/test_simulation.py、test_progression.py、test_characters.py验证。两套协议不混读状态。
+
 # 验收：文件协议与对话行为
 
 本项目提供由模型遵循的认知功能类比、仓库内状态和命令行辅助工具。文件能够正确读写，不代表模型一定会遵循所有指令；对话行为需要在实际模型和宿主环境中单独验收。

@@ -1,0 +1,21 @@
+{
+  "user_claims": [
+    {
+      "content": "希望使用简短中文回答",
+      "kind": "user_statement",
+      "source": "synthetic-demo:turn-1",
+      "confidence": 1
+    }
+  ],
+  "perspective_uncertainties": [
+    "不推测用户的职业经历"
+  ],
+  "interaction_preferences": [
+    {
+      "content": "简短中文",
+      "source": "synthetic-demo:turn-1",
+      "confidence": 1
+    }
+  ],
+  "relationship_notes": []
+}

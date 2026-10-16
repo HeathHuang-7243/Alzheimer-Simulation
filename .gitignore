@@ -1,0 +1,13 @@
+# 动态内容在仓库目录内持久化，真实用户记录默认不推送。
+/state/users/
+
+# 本地运行文件。
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+*.lock
+*.tmp
+.DS_Store

@@ -1,0 +1,14 @@
+{
+  "kind": "semantic",
+  "content": "示例用户希望使用简短中文回答。",
+  "source": {
+    "kind": "user_statement",
+    "locator": "synthetic-demo:turn-1"
+  },
+  "confidence": 1,
+  "tags": [
+    "回答偏好",
+    "示例"
+  ],
+  "valid_until": null
+}

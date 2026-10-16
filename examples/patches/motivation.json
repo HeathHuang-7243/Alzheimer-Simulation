@@ -1,0 +1,12 @@
+{
+  "goals": [
+    {
+      "id": "practice",
+      "description": "按用户目标练习一次面试",
+      "status": "active",
+      "priority": 1
+    }
+  ],
+  "next_action": "询问目标岗位",
+  "stop_requested": false
+}

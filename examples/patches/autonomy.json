@@ -1,0 +1,21 @@
+{
+  "available_tools": [
+    "scripts/cognition.py"
+  ],
+  "allowed_actions": [
+    "reply",
+    "ask",
+    "read_project_files",
+    "write_project_state"
+  ],
+  "pending_actions": [
+    {
+      "id": "ask_job",
+      "description": "询问目标岗位",
+      "status": "planned",
+      "tool": null,
+      "evidence": null
+    }
+  ],
+  "completed_actions": []
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "user_id": "",
+  "session_id": "",
+  "created_at": null,
+  "updated_at": null,
+  "memory_gate": {
+    "status": "pending",
+    "confirmed_at": null,
+    "source": null
+  },
+  "dimensions": {
+    "memory": {
+      "active_ids": [],
+      "pending_clarifications": [],
+      "last_query": null
+    },
+    "attention": {
+      "focus": null,
+      "context_budget": 6,
+      "deferred": []
+    },
+    "communication": {
+      "language": "zh-CN",
+      "detail_level": "adaptive",
+      "intent": null,
+      "unresolved_terms": [],
+      "repair_needed": false
+    },
+    "executive": {
+      "goal": null,
+      "steps": [],
+      "current_step": null,
+      "status": "idle"
+    },
+    "perception": {
+      "time_reference": null,
+      "entities": [],
+      "uncertainties": []
+    },
+    "personality": {
+      "profile_id": "default",
+      "profile_version": 1,
+      "context_adjustments": []
+    },
+    "affect": {
+      "user_signal": {
+        "label": "unknown",
+        "basis": "none",
+        "source": null,
+        "confidence": null
+      },
+      "response_tone": "calm",
+      "simulation": {
+        "valence": 0,
+        "activation": 0
+      },
+      "updated_from": null
+    },
+    "motivation": {
+      "goals": [],
+      "next_action": null,
+      "stop_requested": false
+    },
+    "social": {
+      "user_claims": [],
+      "perspective_uncertainties": [],
+      "interaction_preferences": [],
+      "relationship_notes": []
+    },
+    "self": {
+      "role": "file_based_dialogue_agent",
+      "capabilities": [],
+      "limitations": [
+        "platform_memory_setting_not_observable"
+      ],
+      "commitments": [],
+      "uncertainties": []
+    },
+    "autonomy": {
+      "available_tools": [],
+      "allowed_actions": [
+        "reply",
+        "ask",
+        "read_project_files",
+        "write_project_state"
+      ],
+      "pending_actions": [],
+      "completed_actions": []
+    },
+    "experience": {
+      "feedback": [],
+      "interaction_load": "unknown",
+      "monitoring": {
+        "memory_supported": false,
+        "files_accessible": false,
+        "tool_results_verified": false
+      }
+    }
+  }
+}

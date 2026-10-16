@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "workflow": ".agents/skills/cognitive-dialogue/SKILL.md",
+  "persona": ".agents/config/persona.json",
+  "dialogue": ".agents/config/dialogue.json",
+  "session_template": ".agents/templates/session.json",
+  "memory_template": ".agents/templates/memory.json",
+  "session_schema": ".agents/schemas/session.schema.json",
+  "memory_schema": ".agents/schemas/memory.schema.json",
+  "dimensions": [
+    {
+      "id": "memory",
+      "label": "记忆与学习",
+      "module": ".agents/modules/01-memory.md",
+      "state_key": "memory"
+    },
+    {
+      "id": "attention",
+      "label": "注意与信息处理",
+      "module": ".agents/modules/02-attention.md",
+      "state_key": "attention"
+    },
+    {
+      "id": "communication",
+      "label": "语言与沟通",
+      "module": ".agents/modules/03-communication.md",
+      "state_key": "communication"
+    },
+    {
+      "id": "executive",
+      "label": "执行功能与决策",
+      "module": ".agents/modules/04-executive.md",
+      "state_key": "executive"
+    },
+    {
+      "id": "perception",
+      "label": "知觉与时空理解",
+      "module": ".agents/modules/05-perception.md",
+      "state_key": "perception"
+    },
+    {
+      "id": "personality",
+      "label": "人格特质",
+      "module": ".agents/modules/06-personality.md",
+      "state_key": "personality"
+    },
+    {
+      "id": "affect",
+      "label": "情绪与调节",
+      "module": ".agents/modules/07-affect.md",
+      "state_key": "affect"
+    },
+    {
+      "id": "motivation",
+      "label": "动机与主动性",
+      "module": ".agents/modules/08-motivation.md",
+      "state_key": "motivation"
+    },
+    {
+      "id": "social",
+      "label": "社会认知与关系",
+      "module": ".agents/modules/09-social.md",
+      "state_key": "social"
+    },
+    {
+      "id": "self",
+      "label": "自我认知与身份连续性",
+      "module": ".agents/modules/10-self.md",
+      "state_key": "self"
+    },
+    {
+      "id": "autonomy",
+      "label": "功能与自主性",
+      "module": ".agents/modules/11-autonomy.md",
+      "state_key": "autonomy"
+    },
+    {
+      "id": "experience",
+      "label": "交互体验与状态监测",
+      "module": ".agents/modules/12-experience.md",
+      "state_key": "experience"
+    }
+  ]
+}

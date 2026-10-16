@@ -1,0 +1,17 @@
+{
+  "goal": "完成一次面试练习",
+  "steps": [
+    {
+      "id": "job",
+      "description": "确认目标岗位",
+      "status": "active"
+    },
+    {
+      "id": "question",
+      "description": "提出一道适配岗位的问题",
+      "status": "pending"
+    }
+  ],
+  "current_step": "job",
+  "status": "active"
+}

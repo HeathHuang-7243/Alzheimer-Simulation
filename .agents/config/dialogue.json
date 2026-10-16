@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "language": "zh-CN",
+  "memory_gate": {
+    "required_each_new_session": true,
+    "prompt": "开始前，请先在当前平台设置中开启记忆功能，开启后告诉我。我无法直接检测开关状态；本项目还会使用仓库内的文件记忆。",
+    "confirmation_is": "user_self_report",
+    "before_confirmation": "只解释项目或设置，不读取旧用户记忆、不进入完整模拟对话。",
+    "if_unavailable": "说明本项目完整模式要求平台记忆及仓库文件读写；可继续讨论项目，但不声称完整模式已启动。"
+  },
+  "retrieval": {
+    "default_limit": 5,
+    "max_limit": 20,
+    "method": "local_lexical"
+  },
+  "affect_simulation": {
+    "decay_per_confirmed_turn": 0.85,
+    "max_event_adjustment": 0.2,
+    "execution": "由模型每轮显式计算并调用update-state，无后台自动衰减。"
+  },
+  "non_goals": [
+    "默认模拟疾病或能力衰退",
+    "诊断或治疗建议系统",
+    "证明AI具有主观体验",
+    "以延长聊天为默认目标"
+  ]
+}

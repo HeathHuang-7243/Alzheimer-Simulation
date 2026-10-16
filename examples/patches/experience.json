@@ -1,0 +1,15 @@
+{
+  "feedback": [
+    {
+      "content": "希望回答简短",
+      "source": "synthetic-demo:turn-1",
+      "confidence": 1
+    }
+  ],
+  "interaction_load": "unknown",
+  "monitoring": {
+    "memory_supported": true,
+    "files_accessible": true,
+    "tool_results_verified": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "role": "file_based_dialogue_agent",
+  "capabilities": [
+    "repository_file_operations"
+  ],
+  "limitations": [
+    "platform_memory_setting_not_observable",
+    "target_job_unknown"
+  ],
+  "commitments": [
+    {
+      "id": "practice",
+      "description": "陪同完成一次练习",
+      "status": "active"
+    }
+  ],
+  "uncertainties": [
+    "实际岗位要求尚不清楚"
+  ]
+}

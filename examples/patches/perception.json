@@ -1,0 +1,14 @@
+{
+  "time_reference": null,
+  "entities": [
+    {
+      "id": "user",
+      "label": "希望练习面试的示例用户",
+      "kind": "participant",
+      "source": "synthetic-demo:turn-1"
+    }
+  ],
+  "uncertainties": [
+    "目标岗位尚未提供"
+  ]
+}

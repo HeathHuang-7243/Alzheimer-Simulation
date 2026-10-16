@@ -1,0 +1,14 @@
+{
+  "user_signal": {
+    "label": "紧张",
+    "basis": "self_report",
+    "source": "synthetic-demo:turn-1",
+    "confidence": 1
+  },
+  "response_tone": "supportive",
+  "simulation": {
+    "valence": 0,
+    "activation": 0.2
+  },
+  "updated_from": "synthetic-demo:turn-1"
+}

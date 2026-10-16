@@ -1,0 +1,14 @@
+{
+  "kind": "semantic",
+  "content": "示例用户纠正：默认可以详细解释，面试练习时保持简短。",
+  "source": {
+    "kind": "user_statement",
+    "locator": "synthetic-demo:turn-2"
+  },
+  "confidence": 1,
+  "tags": [
+    "回答偏好",
+    "示例"
+  ],
+  "valid_until": null
+}

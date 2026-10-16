@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "profile_id": "baseline",
+  "label": "母版对照",
+  "target": "simulated_agent",
+  "calibration": "uncalibrated_engineering_preset",
+  "automatic_progression": false,
+  "controls": {
+    "memory": {
+      "recent_episode_window": null,
+      "semantic_window": null,
+      "procedural_window": null,
+      "cue_bonus": 0,
+      "encoding": "ordinary",
+      "repetition": "off"
+    },
+    "attention": {
+      "context_items": 20,
+      "topic_switching": "ordinary"
+    },
+    "communication": {
+      "word_finding": "ordinary",
+      "utterance_style": "ordinary",
+      "comprehension_load": "ordinary"
+    },
+    "executive": {
+      "planning_steps": 20,
+      "prompting": "none"
+    },
+    "perception": {
+      "time_orientation": "ordinary",
+      "person_recognition": "not_assumed_impaired",
+      "scene_tracking": "ordinary"
+    },
+    "personality": {
+      "trait_change": "not_assumed",
+      "expression_consistency": "ordinary",
+      "premorbid_profile_preserved": true
+    },
+    "affect": {
+      "anxiety": "not_assumed",
+      "irritability": "not_assumed",
+      "event_recollection_and_affect": "ordinary",
+      "emotion_capacity": "not_inferred_from_speech"
+    },
+    "motivation": {
+      "initiation": "ordinary",
+      "sustain_goal": "ordinary",
+      "apathy": "not_assumed"
+    },
+    "social": {
+      "perspective_taking": "ordinary",
+      "emotional_concern": "not_assumed_absent",
+      "relationship_recognition": "ordinary"
+    },
+    "self": {
+      "error_awareness": "ordinary",
+      "autobiographical_detail": "ordinary",
+      "identity_erasure": false
+    },
+    "autonomy": {
+      "simulated_task_support": "independent",
+      "choice_expression": "retain_when_possible",
+      "real_tool_permissions": "unchanged"
+    },
+    "experience": {
+      "self_report": "ordinary",
+      "proxy_equivalence": false,
+      "subjective_experience": "unproven",
+      "comfort_priority": true
+    }
+  },
+  "notes": [
+    "这是可review的工程预设，不是临床诊断、量表分数、症状概率或AA临床分期。",
+    "只限制模拟角色的信息视图和行为；不损坏真实记录，不降低用户控制或实际工具可靠性。",
+    "条目数和步骤数是可替换的实验配额，不表示人的记忆容量或疾病严重度。"
+  ]
+}

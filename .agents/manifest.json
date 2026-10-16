@@ -80,5 +80,6 @@
       "module": ".agents/modules/12-experience.md",
       "state_key": "experience"
     }
-  ]
+  ],
+  "condition_manifest": ".agents/alzheimer/manifest.json"
 }

@@ -1,0 +1,14 @@
+{
+  "kind": "episodic",
+  "content": "虚构角色林秋与访客约定见面后坐在长椅上聊天。",
+  "source": {
+    "kind": "user_statement",
+    "locator": "synthetic-character:04-episode"
+  },
+  "confidence": 1,
+  "tags": [
+    "约定",
+    "合成角色"
+  ],
+  "valid_until": null
+}

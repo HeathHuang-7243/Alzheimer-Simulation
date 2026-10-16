@@ -1,6 +1,8 @@
 # Alzheimer-Simulation
 
-一个由 `AGENTS.md` 指导模型使用的文件式对话认知原型，覆盖记忆、注意、沟通、执行、知觉、人格、情绪、动机、社会认知、自我认知、自主性及交互体验12个维度。
+一个由 `AGENTS.md` 指导模型使用的文件式对话认知原型，覆盖记忆、注意、沟通、执行、知觉、人格、情绪、动机、社会认知、自我认知、自主性及交互体验12个维度。当前 `feature/alzheimerAffected` 在母版上增加阿尔茨海默病影响的定义、可选阶段预设和演员记忆视图。
+
+先读[12维受影响定义与review](docs/alzheimer-review.md)，再看[五种阶段配置](.agents/alzheimer/manifest.json)和[行为验收](docs/alzheimer-acceptance.md)。默认仍为 `baseline`；显式选择 `mild` 等预设才进入相应受约束角色，不随聊天轮数自动进展。`main` 和 `archive/cognitive-baseline-v1` 保存未受影响的母版。
 
 规则、配置、模板及实际运行状态都放在本仓库目录内，使用 Markdown 和 JSON；不使用数据库、向量服务或外部记忆后端。模型负责理解和对话，文件工具负责校验与保存。当前没有独立聊天界面或自动调用大模型的服务。
 
@@ -26,6 +28,8 @@
 | 可运行示例 | [examples](examples/README.md) |
 | 行为与工程验收 | [acceptance.md](docs/acceptance.md) |
 | 实际数据位置 | [state](state/README.md) |
+| AD影响定义与证据 | [逐维review](docs/alzheimer-review.md) · [来源快照](.agents/alzheimer/sources.json) |
+| AD配置使用示例 | [alzheimer示例](examples/alzheimer/README.md) |
 
 ## 本地检查
 
@@ -40,6 +44,6 @@ python3 -m unittest discover -s tests -v
 
 ## 设计边界
 
-这些模块是基于认知研究提出的工程类比，不是经过临床验证的阿尔茨海默病模拟器。默认不模拟疾病、记忆退化或人格损伤，也不据状态变量宣称AI具有情绪体验或意识。相关理论资料见 [Alzheimer研究仓库](https://github.com/HeathHuang-7243/Alzheimer)。
+这些模块是基于认知研究提出的工程类比，不是经过临床验证的阿尔茨海默病模拟器。默认对照不施加损伤；受影响预设的数字是实验配额，不是临床容量或症状概率。记忆窗口实际限制文件检索，语言/人格/情绪等表现仍依赖宿主模型遵循规则；文件不能抹去模型已见的聊天历史或平台记忆。也不据状态变量宣称AI具有情绪体验或意识。相关理论资料见 [Alzheimer研究仓库](https://github.com/HeathHuang-7243/Alzheimer)。
 
 动态数据仍保存在本仓库的 `state/users/` 下，默认不自动提交真实对话到Git。实际文件持久性由宿主环境决定；模型没有成功读写时，应明确说明，而不能声称已经记住。

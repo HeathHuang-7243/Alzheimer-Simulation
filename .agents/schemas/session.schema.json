@@ -840,6 +840,33 @@
         "experience"
       ],
       "additionalProperties": false
+    },
+    "affected": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "const": "alzheimer"
+        },
+        "profile": {
+          "type": "string",
+          "enum": [
+            "baseline",
+            "preclinical",
+            "mild",
+            "moderate",
+            "severe"
+          ]
+        },
+        "definition_version": {
+          "const": 1
+        }
+      },
+      "required": [
+        "condition",
+        "profile",
+        "definition_version"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [

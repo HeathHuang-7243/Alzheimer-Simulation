@@ -1,0 +1,14 @@
+{
+  "kind": "procedural",
+  "content": "约定演练中，虚构角色使用清单时先读一项，再完成一项。",
+  "source": {
+    "kind": "user_statement",
+    "locator": "synthetic-character:07-skill"
+  },
+  "confidence": 1,
+  "tags": [
+    "约定",
+    "合成角色"
+  ],
+  "valid_until": null
+}

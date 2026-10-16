@@ -100,3 +100,41 @@ python3 scripts/cognition.py validate
 工具支持仓库schema使用的明确子集：`type`、`required`、`properties`、`additionalProperties`、`enum`、`const`、`items`、数组/字符串长度、`uniqueItems`、数值上下界、`pattern`、`format=date-time`、本地JSON Pointer `$ref`及`$defs`/`definitions`。`$schema`、标题等作为注释元数据处理。不是通用JSON Schema实现；不支持的关键字直接报错，不联网解析引用。日期格式额外限定UTC，不接受重复JSON键、NaN或Infinity。
 
 模型行为和文件工程检查分开验收，见[acceptance.md](acceptance.md)。
+
+## 本feature：选择AD受影响预设
+
+默认行为仍是母版 `baseline`。明确需要虚构角色受影响时，创建会话时指定阶段：
+
+```bash
+python3 scripts/cognition.py init-session --user local-user --session ad-001 --affected-profile mild
+```
+
+支持 `baseline`、`preclinical`、`mild`、`moderate`、`severe`。它们是未经临床校准的工程预设，不能作为诊断或AA临床分期。创建后仍为记忆待确认状态，不能跳过真实用户开启平台记忆的确认。旧会话没有 `affected` 字段时，按baseline处理，无需改写旧文件。
+
+用户明确要求更换预设时，在已确认会话中使用：
+
+```bash
+python3 scripts/cognition.py set-affected-profile --user local-user --session ad-001 --profile moderate
+```
+
+该命令仅更新会话的阶段选择和更新时间，不重置12维状态，不修改稳定人格或规范记忆。阶段不随时间、轮数、提示次数或错误数自动进展。切回baseline也不会恢复已经被真实用户明确删除的记录。
+
+## 演员视图与控制器视图
+
+```bash
+python3 scripts/cognition.py context --user local-user --session ad-001 --view actor --support none --query "约定" --limit 8
+python3 scripts/cognition.py context --user local-user --session ad-001 --view actor --support cue --query "约定" --limit 8
+python3 scripts/cognition.py context --user local-user --session ad-001 --view controller --query "约定" --limit 8
+```
+
+`actor`是默认视图。`mild`、`moderate`、`severe`时，工具先排除过期记录，再按记忆类型选取最新的候选窗口，然后进行原有词法检索与总条数限制。baseline与preclinical均使用正常检索，不施加这些限制。返回副本中的 `dimensions.memory.active_ids` 仅保留本轮可见ID；`memories`不含被排除记录，也不额外添加隐藏规范记录的正文或ID，不改原状态文件。其他状态字段可能仍有此前复制的信息，不能把这个保证扩大为整个模型上下文都已清空。
+
+`controller`为出戏的管理视图，使用正常规范记忆检索，不应用角色窗口、注意限制或提示加成；仍检查用户范围和记忆确认。真实纠错、删除、权限、工具回执与停止要求使用该可靠流程，不能用模拟症状拒绝执行或谎报。
+
+`--support cue`和`stepwise`只在本轮确有线索或分步支持时使用：候选窗口与返回条数上限有限增加一次 `cue_bonus`，重复读取不会累加恢复。逐步支持还指导宿主按步骤交流；工具不替角色生成计划或完成行动。
+
+返回的 `affected` 包括选定阶段、全部12维controls、定义路径、`mechanical_effects`和`host_model_effects`。前者记录已应用的文件视图限制；后者需要模型遵循定义生成，尚未获得真实模型行为或医学有效性验证。步骤数、窗口和条目限制都是工程参数。
+
+这不是完整的失忆机制：宿主已有聊天历史、平台记忆、其他状态字段中的抄录仍可能包含相同信息。文件过滤无法使同一个已看过资料的模型真正忘记；若研究需要严格信息隔离，宿主应只给演员独立的受限输入，不转发完整controller上下文。该隔离宿主不在当前仓库中实现。
+
+`validate`额外检查五种配置、12维定义路径、控件形状/枚举、保护常量及禁止自动进展；本版要求症状前controls与baseline完全相同，避免静默强制症状。完整定义与证据见[review](alzheimer-review.md)，新增测试与人工验收见[AD验收](alzheimer-acceptance.md)。

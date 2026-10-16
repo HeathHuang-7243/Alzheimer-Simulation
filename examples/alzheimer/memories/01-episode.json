@@ -1,0 +1,14 @@
+{
+  "kind": "episodic",
+  "content": "虚构角色林秋与访客约定周四在公园见面。",
+  "source": {
+    "kind": "user_statement",
+    "locator": "synthetic-character:01-episode"
+  },
+  "confidence": 1,
+  "tags": [
+    "约定",
+    "合成角色"
+  ],
+  "valid_until": null
+}

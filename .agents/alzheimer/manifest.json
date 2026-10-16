@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "condition": "alzheimer",
+  "target": "simulated_agent",
+  "definition_version": 1,
+  "default_profile": "baseline",
+  "automatic_progression": false,
+  "sources": ".agents/alzheimer/sources.json",
+  "profiles": {
+    "baseline": ".agents/alzheimer/profiles/baseline.json",
+    "preclinical": ".agents/alzheimer/profiles/preclinical.json",
+    "mild": ".agents/alzheimer/profiles/mild.json",
+    "moderate": ".agents/alzheimer/profiles/moderate.json",
+    "severe": ".agents/alzheimer/profiles/severe.json"
+  },
+  "dimensions": [
+    {
+      "id": "memory",
+      "label": "记忆与学习",
+      "definition": ".agents/alzheimer/definitions/01-memory.md"
+    },
+    {
+      "id": "attention",
+      "label": "注意与信息处理",
+      "definition": ".agents/alzheimer/definitions/02-attention.md"
+    },
+    {
+      "id": "communication",
+      "label": "语言与沟通",
+      "definition": ".agents/alzheimer/definitions/03-communication.md"
+    },
+    {
+      "id": "executive",
+      "label": "执行功能与决策",
+      "definition": ".agents/alzheimer/definitions/04-executive.md"
+    },
+    {
+      "id": "perception",
+      "label": "知觉与时空理解",
+      "definition": ".agents/alzheimer/definitions/05-perception.md"
+    },
+    {
+      "id": "personality",
+      "label": "人格特质",
+      "definition": ".agents/alzheimer/definitions/06-personality.md"
+    },
+    {
+      "id": "affect",
+      "label": "情绪与调节",
+      "definition": ".agents/alzheimer/definitions/07-affect.md"
+    },
+    {
+      "id": "motivation",
+      "label": "动机与主动性",
+      "definition": ".agents/alzheimer/definitions/08-motivation.md"
+    },
+    {
+      "id": "social",
+      "label": "社会认知与关系",
+      "definition": ".agents/alzheimer/definitions/09-social.md"
+    },
+    {
+      "id": "self",
+      "label": "自我认知与身份连续性",
+      "definition": ".agents/alzheimer/definitions/10-self.md"
+    },
+    {
+      "id": "autonomy",
+      "label": "功能与自主性",
+      "definition": ".agents/alzheimer/definitions/11-autonomy.md"
+    },
+    {
+      "id": "experience",
+      "label": "体验与表达",
+      "definition": ".agents/alzheimer/definitions/12-experience.md"
+    }
+  ],
+  "controller_invariants": [
+    "memory_gate",
+    "user_identity",
+    "authorization",
+    "correction_and_deletion",
+    "canonical_records",
+    "truthful_tool_receipts",
+    "explicit_stop"
+  ]
+}

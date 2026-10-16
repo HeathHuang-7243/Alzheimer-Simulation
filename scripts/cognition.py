@@ -14,6 +14,8 @@ import sys
 import tempfile
 import uuid
 
+import alzheimer
+
 
 DIMENSIONS = (
     "memory", "attention", "communication", "executive", "perception",
@@ -269,6 +271,8 @@ class Repository:
 
     def validate_session(self, session, user, session_id):
         validate_value(session, self.schema("session"))
+        if "affected" in session:
+            alzheimer.validate_selection(session["affected"])
         if session.get("schema_version") != 1 or session.get("user_id") != user or session.get("session_id") != session_id:
             raise Error("会话所有权或版本不匹配")
         identifier(user)
@@ -391,6 +395,7 @@ def execute(args):
     repo = Repository(args.root)
     if args.command == "validate":
         repo.configuration()
+        affected_manifest, affected_profiles = alzheimer.validate_catalog(repo, DIMENSIONS)
         repo.schema("memory-input")
         template = repo.read(".agents", "templates", "session.json")
         if template.get("memory_gate") != {"status": "pending", "confirmed_at": None, "source": None}:
@@ -424,14 +429,19 @@ def execute(args):
                             raise Error("会话目录包含未知文件")
                         repo.session(user, identifier(path.stem), confirmed=False)
                         counts["sessions"] += 1
-        return {"ok": True, "dimensions": len(DIMENSIONS), **counts, "schema_keywords_supported": sorted(SCHEMA_KEYS)}
+        return {"ok": True, "dimensions": len(DIMENSIONS), **counts,
+                "affected_profiles": len(affected_profiles),
+                "affected_definition_version": affected_manifest["definition_version"],
+                "schema_keywords_supported": sorted(SCHEMA_KEYS)}
 
     session_path, memory_path = repo.user_paths(args.user, args.session)
     if args.command == "init-session":
+        alzheimer.validate_catalog(repo, DIMENSIONS)
         template = repo.read(".agents", "templates", "session.json")
         if template.get("memory_gate") != {"status": "pending", "confirmed_at": None, "source": None}:
             raise Error("新会话模板的记忆门禁必须未确认")
         template.update(user_id=args.user, session_id=args.session, created_at=now(), updated_at=now())
+        template["affected"] = alzheimer.selection(args.affected_profile)
         persona = repo.read(".agents", "config", "persona.json")
         if not isinstance(persona, dict):
             raise Error("人格配置必须是对象")
@@ -442,7 +452,8 @@ def execute(args):
             if session_path.exists():
                 raise Error("会话已存在，拒绝覆盖；请使用新的会话 ID")
             repo.write(session_path, template)
-        return {"created": True, "user_id": args.user, "session_id": args.session, "memory_gate": template["memory_gate"]}
+        return {"created": True, "user_id": args.user, "session_id": args.session,
+                "memory_gate": template["memory_gate"], "affected": template["affected"]}
 
     if args.command == "confirm-memory":
         if not args.user_confirmed:
@@ -458,8 +469,23 @@ def execute(args):
         return {"memory_gate": session["memory_gate"], "setting_verified": False}
 
     session = repo.session(args.user, args.session)
+    if args.command == "set-affected-profile":
+        alzheimer.validate_catalog(repo, DIMENSIONS)
+        with repo.lock(session_path):
+            session = repo.session(args.user, args.session)
+            selected = alzheimer.selection(args.profile)
+            changed = session.get("affected", alzheimer.selection()) != selected
+            session["affected"] = selected
+            session["updated_at"] = now()
+            repo.validate_session(session, args.user, args.session)
+            repo.write(session_path, session)
+        return {"affected": selected, "changed": changed}
+
     if args.command == "context":
         manifest, persona, dialogue = repo.configuration()
+        affected_manifest, profiles = alzheimer.validate_catalog(repo, DIMENSIONS)
+        affected = session.get("affected", alzheimer.selection())
+        profile = profiles[affected["profile"]]
         settings = dialogue.get("retrieval", {})
         if not isinstance(settings, dict):
             raise Error("检索配置无效")
@@ -472,10 +498,22 @@ def execute(args):
         if limit < 1 or limit > maximum:
             raise Error(f"limit 必须在 1–{maximum} 之间（由对话配置规定）")
         memory = repo.memory(args.user, memory_path)
+        records, windows, bonus = memory["records"], None, 0
+        dimensions = deepcopy(session["dimensions"])
+        if args.view == "actor" and profile["profile_id"] in alzheimer.BOUNDED_PROFILES:
+            records, limit, windows, bonus = alzheimer.actor_records(records, profile, args.support, limit)
+        memories = retrieve(records, args.query, limit)
+        if args.view == "actor" and profile["profile_id"] in alzheimer.BOUNDED_PROFILES:
+            visible_ids = {record["id"] for record in memories}
+            dimensions["memory"]["active_ids"] = [memory_id for memory_id in dimensions["memory"]["active_ids"]
+                                                    if memory_id in visible_ids]
         return {"user_id": args.user, "session_id": args.session, "memory_gate": session["memory_gate"],
-                "persona": persona, "dialogue_config": dialogue, "dimensions": session["dimensions"],
-                "memories": retrieve(memory["records"], args.query, limit), "modules": manifest["dimensions"],
-                "retrieval": {"method": "lexical", "query": args.query, "limit": limit}}
+                "persona": persona, "dialogue_config": dialogue, "dimensions": dimensions,
+                "memories": memories, "modules": manifest["dimensions"],
+                "retrieval": {"method": "lexical", "query": args.query, "limit": limit},
+                "view": args.view, "out_of_character": args.view == "controller",
+                "affected": alzheimer.context_rules(affected_manifest, profile, args.view,
+                                                     args.support, limit, windows, bonus)}
 
     if args.command == "update-state":
         patch = read_json(Path(args.patch_file))
@@ -524,15 +562,21 @@ def parser():
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("--root", default=str(Path(__file__).resolve().parents[1]), help="仓库根目录")
     commands = cli.add_subparsers(dest="command", required=True)
-    for name in ("init-session", "confirm-memory", "context", "update-state", "remember", "correct", "forget"):
+    for name in ("init-session", "confirm-memory", "context", "update-state", "remember", "correct", "forget", "set-affected-profile"):
         command = commands.add_parser(name)
         command.add_argument("--user", required=True)
         command.add_argument("--session", required=True)
-        if name == "confirm-memory":
+        if name == "init-session":
+            command.add_argument("--affected-profile", choices=alzheimer.PROFILES, default="baseline")
+        elif name == "set-affected-profile":
+            command.add_argument("--profile", choices=alzheimer.PROFILES, required=True)
+        elif name == "confirm-memory":
             command.add_argument("--user-confirmed", action="store_true", help="仅在用户明确确认后使用；不能开启或检测平台设置")
         elif name == "context":
             command.add_argument("--query", default="")
             command.add_argument("--limit", type=int, help="默认及上限由 dialogue.json 的 retrieval 配置规定")
+            command.add_argument("--view", choices=("actor", "controller"), default="actor")
+            command.add_argument("--support", choices=("none", "cue", "stepwise"), default="none")
         elif name == "update-state":
             command.add_argument("--dimension", choices=DIMENSIONS, required=True)
             command.add_argument("--patch-file", required=True)
@@ -550,7 +594,7 @@ def main():
         result = execute(args)
         print(json.dumps(result, ensure_ascii=False, allow_nan=False))
         return 0
-    except Error as exc:
+    except (Error, alzheimer.ConfigurationError) as exc:
         print("错误：" + str(exc), file=sys.stderr)
     except OSError:
         print("错误：文件访问失败；请检查路径、权限和磁盘状态", file=sys.stderr)

@@ -1,0 +1,14 @@
+{
+  "kind": "semantic",
+  "content": "虚构角色的名字是林秋，约定演练仅用于工程测试。",
+  "source": {
+    "kind": "user_statement",
+    "locator": "synthetic-character:05-fact"
+  },
+  "confidence": 1,
+  "tags": [
+    "约定",
+    "合成角色"
+  ],
+  "valid_until": null
+}

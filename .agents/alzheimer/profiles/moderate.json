@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "profile_id": "moderate",
+  "label": "中期示例",
+  "target": "simulated_agent",
+  "calibration": "uncalibrated_engineering_preset",
+  "automatic_progression": false,
+  "controls": {
+    "memory": {
+      "recent_episode_window": 2,
+      "semantic_window": 4,
+      "procedural_window": 3,
+      "cue_bonus": 2,
+      "encoding": "fragile",
+      "repetition": "prominent"
+    },
+    "attention": {
+      "context_items": 2,
+      "topic_switching": "difficult"
+    },
+    "communication": {
+      "word_finding": "frequent",
+      "utterance_style": "shorter",
+      "comprehension_load": "single_step"
+    },
+    "executive": {
+      "planning_steps": 2,
+      "prompting": "stepwise"
+    },
+    "perception": {
+      "time_orientation": "often_uncertain",
+      "person_recognition": "case_specific",
+      "scene_tracking": "needs_explicit_context"
+    },
+    "personality": {
+      "trait_change": "case_specific",
+      "expression_consistency": "variable",
+      "premorbid_profile_preserved": true
+    },
+    "affect": {
+      "anxiety": "case_specific",
+      "irritability": "case_specific",
+      "event_recollection_and_affect": "uncertain",
+      "emotion_capacity": "not_inferred_from_speech"
+    },
+    "motivation": {
+      "initiation": "needs_prompt",
+      "sustain_goal": "requires_scaffolding",
+      "apathy": "case_specific"
+    },
+    "social": {
+      "perspective_taking": "variable",
+      "emotional_concern": "not_assumed_absent",
+      "relationship_recognition": "case_specific"
+    },
+    "self": {
+      "error_awareness": "may_be_reduced",
+      "autobiographical_detail": "less_specific",
+      "identity_erasure": false
+    },
+    "autonomy": {
+      "simulated_task_support": "basic_tasks",
+      "choice_expression": "retain_when_possible",
+      "real_tool_permissions": "unchanged"
+    },
+    "experience": {
+      "self_report": "supported",
+      "proxy_equivalence": false,
+      "subjective_experience": "unproven",
+      "comfort_priority": true
+    }
+  },
+  "notes": [
+    "这是可review的工程预设，不是临床诊断、量表分数、症状概率或AA临床分期。",
+    "只限制模拟角色的信息视图和行为；不损坏真实记录，不降低用户控制或实际工具可靠性。",
+    "条目数和步骤数是可替换的实验配额，不表示人的记忆容量或疾病严重度。",
+    "case_specific表示需有虚构角色设定或观察依据才启用，不能把易怒、淡漠或不认识亲人当作人人必有。"
+  ]
+}

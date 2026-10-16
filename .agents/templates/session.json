@@ -97,5 +97,10 @@
         "tool_results_verified": false
       }
     }
+  },
+  "affected": {
+    "condition": "alzheimer",
+    "profile": "baseline",
+    "definition_version": 1
   }
 }

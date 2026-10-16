@@ -1,0 +1,14 @@
+{
+  "kind": "procedural",
+  "content": "约定演练中，虚构角色确认安排时按地点、日期、时间分别核对。",
+  "source": {
+    "kind": "user_statement",
+    "locator": "synthetic-character:08-skill"
+  },
+  "confidence": 1,
+  "tags": [
+    "约定",
+    "合成角色"
+  ],
+  "valid_until": null
+}

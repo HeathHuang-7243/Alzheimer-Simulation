@@ -3,58 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f4ee">
-  <meta name="description" content="用十二个维度理解记忆、性格与一次对话。了解日常机制、AD角色模拟的边界，以及可以自由跳过的角色设定问题。">
-  <title>一次对话的十二个维度 · Alzheimer Simulation</title>
+  <meta name="theme-color" content="#192d31">
+  <meta name="description" content="Alzheimer-Simulation：基于阿尔茨海默病研究的 AI 角色行为实验。用场景、十二维、文件记忆和可追踪演变，探索记忆改变时对话会怎样。">
+  <title>Alzheimer-Simulation · 当记忆改变，对话会怎样？</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
+  <script src="./project.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#explore">跳到十二个维度</a>
+  <a class="skip-link" href="#project">跳到项目介绍</a>
   <header class="masthead page-width">
-    <a class="brand" href="#top" aria-label="Alzheimer Simulation，返回页首">
-      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span>ALZHEIMER<span class="brand-sub">SIMULATION · 研究手记</span></span>
-    </a>
-    <nav aria-label="主导航">
-      <a href="#explore">认识维度</a>
-      <a href="#before">设定之前</a>
-      <a class="repository-link" href="https://github.com/HeathHuang-7243/Alzheimer-Simulation" target="_blank" rel="noopener noreferrer">项目仓库 <span aria-hidden="true">↗</span><span class="sr-only">（新窗口）</span></a>
-    </nav>
+    <a class="brand" href="#top" aria-label="Alzheimer-Simulation，返回页首"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="brand-name">Alzheimer-<span>Simulation</span><small>研究驱动的 AI 对话实验</small></span></a>
+    <nav aria-label="主导航"><a class="nav-secondary" href="#project">项目</a><a class="nav-secondary" href="#modes">演变规则</a><a href="#explore">十二维</a><a class="nav-start" href="#start">如何开始 <span aria-hidden="true">↗</span></a></nav>
   </header>
 
   <main id="top">
-    <section class="hero page-width" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="small-line"></span> 一份关于对话的认知地图</p>
-        <h1 id="hero-title">一次对话，<br>不止一种<span class="title-accent">能力</span>。</h1>
-        <p class="hero-intro">记住一句约定、理解一个暗示、找到一个词。<br class="desktop-break">看似自然的交谈，连接着许多不同的过程。</p>
-        <p class="hero-note">从十二个维度认识它们，再决定你想怎样设定一个虚构角色。这里是入门阅读，不是认知测试或诊断工具。</p>
-        <a class="primary-link" href="#explore">开始探索 <span aria-hidden="true">↓</span></a>
-      </div>
-      <div class="hero-map" aria-hidden="true">
-        <div class="map-topline"><span>FUNCTIONAL MAP</span><span>01 — 12</span></div>
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
-        <div class="map-line map-line-one"></div><div class="map-line map-line-two"></div>
-        <span class="map-dot dot-a"></span><span class="map-dot dot-b"></span><span class="map-dot dot-c"></span><span class="map-dot dot-d"></span>
-        <span class="map-label label-a">记忆<span>MEMORY</span></span>
-        <span class="map-label label-b">情绪<span>AFFECT</span></span>
-        <span class="map-label label-c">行动<span>ACTION</span></span>
-        <span class="map-label label-d">自我<span>SELF</span></span>
-        <div class="map-center"><span>对话</span><small>CONVERSATION</small></div>
-        <p class="map-caption">彼此连接，也可以分别理解。</p>
+    <section class="project-hero" aria-labelledby="hero-title">
+      <div class="page-width project-hero-grid">
+        <div class="project-hero-copy"><p class="eyebrow"><span class="small-line"></span> ALZHEIMER’S RESEARCH → AI DIALOGUE</p><h1 id="hero-title">当记忆改变，<br>对话会<span>怎样？</span></h1><p class="project-lead">一个基于阿尔茨海默病研究的<br class="desktop-break">AI 角色行为实验。</p><p class="project-hero-intro">设定角色与场景，让记忆、语言、性格等十二个维度参与对话。用仓库内的文件记忆，记录每一次有依据的变化。</p><div class="hero-actions"><a class="primary-link" href="#start">了解如何开始 <span aria-hidden="true">↗</span></a><a class="hero-research-link" href="https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/research/literature-review.md" target="_blank" rel="noopener noreferrer">阅读理论研究 ↗<span class="sr-only">（新窗口）</span></a></div><p class="hero-scope">受影响的是模拟的 AI 角色。真实用户是对话者。</p></div>
+        <aside class="run-panel" aria-labelledby="run-title"><div class="run-panel-top"><span><i aria-hidden="true"></i> 虚构场景 · 阅读示意</span><span>SCENE 01</span></div><div class="run-panel-body"><p class="run-eyebrow">旧书店 · 午后 · 初次会面</p><h2 id="run-title">林遥，和一本蓝色的书。</h2><div class="run-tags"><span>初始：mild 轻度工程预设</span><span>三种模式可选</span></div><div class="sample-dialogue"><div class="sample-message"><span>对话者</span><p>你还记得刚才说的那本书吗？</p></div><div class="sample-message actor-message"><span>AI 角色 · 林遥</span><p>是那本……封面蓝色的？<br>你再提醒我一下名字，好吗？</p></div></div><div class="run-memory-note"><span aria-hidden="true">↳</span><p>角色可以请求线索。<br><strong>规范记忆保留，角色只使用当前可见内容。</strong></p></div><p class="sample-disclaimer">人工编写的虚构示意，未运行模型；不是对某位患者或一次实际运行的预测。</p></div></aside>
       </div>
     </section>
+    <div class="project-facts page-width" aria-label="项目组成"><p><strong>12</strong><span>认知与交互维度</span></p><p><strong>3</strong><span>可选择的演变模式</span></p><p><strong>文件记忆</strong><span>来源、时间与修订可检查</span></p><p><strong>Agents</strong><span>指导模型读取、对话与写回</span></p></div>
 
-    <section class="reading-note page-width" aria-label="阅读提示">
-      <p><span class="note-number">12</span><span>个维度<br><small>各有作用，相互影响</small></span></p>
-      <p><span class="note-icon" aria-hidden="true">↗</span><span>从日常例子出发<br><small>先理解，再选择设定</small></span></p>
-      <p><span class="note-icon" aria-hidden="true">○</span><span>没有标准答案<br><small>可以跳过，之后仍可编辑</small></span></p>
-    </section>
+    <section id="project" class="project-overview page-width" aria-labelledby="project-title"><div class="section-heading"><div><p class="eyebrow">THE PROJECT</p><h2 id="project-title">把研究，变成可以检查的对话实验。</h2></div></div><p class="section-intro">从文献中的机制与边界出发，分别设置角色、可用信息和交互支持。你可以比较提示前后的交流，探索记忆、人格与关系的分化，也可以试验一套可追溯的 agent 机制。</p><div class="project-chain"><article><span>01</span><h3>研究依据</h3><p>保留原始来源、阴性结果和证据局限。</p></article><article><span>02</span><h3>十二个维度</h3><p>分别描述能力与表现，不用一个总分代替。</p></article><article><span>03</span><h3>角色与场景</h3><p>决定是谁、在哪里、与谁、谈什么。</p></article><article><span>04</span><h3>演变规则</h3><p>明确初始预设、触发条件、节奏与上限。</p></article><article><span>05</span><h3>文件记忆</h3><p>按模拟 ID 保存背景、状态与经历。</p></article><article><span>06</span><h3>Agents 工作流</h3><p>让宿主模型按规则读取、回应和写回。</p></article></div><p class="section-footnote">这是探索性的工程原型，尚未经临床校准，也不证明对真实照护或训练有效。</p></section>
 
+    <section id="scene" class="scene-section" aria-labelledby="scene-title"><div class="page-width scene-grid"><div><p class="eyebrow">SET THE SCENE</p><h2 id="scene-title">先认识这个角色，<br>再开始这次会面。</h2><p class="section-intro">问卷会先区分熟悉原型与初次相遇，了解病前倾向、说话习惯、关系和近期经历。以下两组都是纯虚构示例，不指向任何真人。</p><div class="scene-tabs" role="tablist" aria-label="查看虚构场景示例"><button id="scene-known-tab" type="button" role="tab" aria-selected="true" aria-controls="scene-example" tabindex="0" data-scene="known">熟悉的人作原型</button><button id="scene-new-tab" type="button" role="tab" aria-selected="false" aria-controls="scene-example" tabindex="-1" data-scene="first">初次相遇</button></div><div class="relationship-distinction"><h3>三个问题，分别回答</h3><ol><li>你是否认识这个角色的原型？</li><li>角色原本是否认识对话者？</li><li>角色在当前场景是否认得对话者？</li></ol><p>这三者不能互相推断。没有设定时，保留未知。</p></div></div><div id="scene-example" class="scene-example" role="tabpanel" aria-labelledby="scene-known-tab" tabindex="0"><div class="scene-example-top"><span>FICTIONAL CHARACTER CARD</span><span>可修改</span></div><h3 id="example-title">沈岚 · 老同事的一次来访</h3><dl><div><dt>背景与说话方式</dt><dd id="example-background">退休编辑，喜欢植物，表达谨慎，常先核对安排。</dd></div><div><dt>当前场景</dt><dd id="example-scene">周四午后，旧同事来家中一起翻看一册植物画集。</dd></div><div><dt>近期经历</dt><dd id="example-recent">上周整理过阳台。确切日期未设定，保留“上周”的说明。</dd></div><div><dt>原型与双方关系</dt><dd id="example-relation">示例中，对话者熟悉原型，角色原本也认识这位旧同事。</dd></div><div><dt>角色此刻是否认得对话者</dt><dd id="example-recognition">尚未设定，不能因为过去认识就自动回答“认得”。</dd></div></dl><div class="fiction-provenance"><span>本页固定虚构示例</span><p>实际问卷中的叙事细节可以跳过。缺失内容以明确的虚构背景补齐，保存生成来源、种子与版本，之后可以编辑。</p></div></div></div></section>
+
+    <section id="modes" class="modes-section page-width" aria-labelledby="modes-title"><div class="section-heading"><div><p class="eyebrow">EVOLUTION, BY EXPLICIT RULES</p><h2 id="modes-title">决定变化的节奏，也决定边界。</h2></div><span class="section-index">03 MODES / 05 PRESETS</span></div><p class="section-intro">启动前先选择初始预设，再确认演变方式。变化按维度分别记录；角色不会因为模型感觉“应该更严重了”就随意加重。</p><div class="mode-tabs" role="tablist" aria-label="演变模式"><button type="button" id="mode-default-tab" role="tab" aria-selected="true" aria-controls="mode-default" tabindex="0" data-mode="default">默认模式<span>情境命中后抽取</span></button><button type="button" id="mode-slow-tab" role="tab" aria-selected="false" aria-controls="mode-slow" tabindex="-1" data-mode="slow">缓慢发展<span>按故事时间逐步变化</span></button><button type="button" id="mode-fixed-tab" role="tab" aria-selected="false" aria-controls="mode-fixed" tabindex="-1" data-mode="fixed">固定状态<span>保持当前预设</span></button></div><div class="mode-panels"><section id="mode-default" class="mode-panel" role="tabpanel" aria-labelledby="mode-default-tab" tabindex="0"><div class="mode-panel-copy"><p class="mode-kicker">DEFAULT · 默认配置，可在启动前修改</p><h3>有相关情境，才有一次抽取机会。</h3><p>新的有效用户对话命中已配置词条，或提交带本条输入证据的关联后，才按概率抽取。查看状态、工具重试和控制指令都不参与抽取。</p><p class="mode-example">例如：“你<strong>记得刚才</strong>说的公园吗？”可能命中词条；命中本身不等于发生变化。</p></div><dl class="mode-specs"><div><dt>命中后的默认机会</dt><dd>20%</dd></div><div><dt>变化后的冷却</dt><dd>接下来 3 个有效对话轮次</dd></div><div><dt>单次变化</dt><dd>最多 1 个维度，升 1 级</dd></div><div><dt>默认可变维度 / 上限</dt><dd>记忆、注意、沟通、执行 / severe</dd></div></dl></section><section id="mode-slow" class="mode-panel" role="tabpanel" aria-labelledby="mode-slow-tab" tabindex="0" hidden><div class="mode-panel-copy"><p class="mode-kicker">SLOW · 首次起点只在启动时抽取一次</p><h3>先等待首次起点，再分散执行变化。</h3><p>首次起点位于第 N 天 ±1 天，之后把维度变化分布在设定的持续天数内。默认 N=10，持续 3 天，可在设定卡中修改。</p><p class="mode-example">到期后，也只在<strong>新的用户对话</strong>到来时执行；每次最多补一个维度步骤，离线期间没有后台计时触发。</p></div><dl class="mode-specs"><div><dt>首次起点</dt><dd>N 天 ±1 天，只抽取一次</dd></div><div><dt>之后的节奏</dt><dd>按确认的持续天数分散</dd></div><div><dt>一次新对话</dt><dd>最多 1 个已到期步骤</dd></div><div><dt>时间基准</dt><dd>现实时间，或明确的手动故事时钟</dd></div></dl></section><section id="mode-fixed" class="mode-panel" role="tabpanel" aria-labelledby="mode-fixed-tab" tabindex="0" hidden><div class="mode-panel-copy"><p class="mode-kicker">FIXED · 用于对照与交互探索</p><h3>保持预设，观察不同交流方式。</h3><p>不自动提高各维度预设。你可以在同一组角色约束下，比较一句提示、一步说明或一个更具体的问题怎样影响交流。</p><p class="mode-example">例如，保持相同预设，分别提供<strong>普通提问、明确线索、分步支持</strong>。表现仍依赖宿主模型，需要实际验证。</p></div><dl class="mode-specs"><div><dt>自动变化</dt><dd>无</dd></div><div><dt>当前预设</dt><dd>启动前明确选择</dd></div><div><dt>可调整的交互支持</dt><dd>线索、逐步说明、问题组织</dd></div><div><dt>用途</dt><dd>对照、交流修复与机制探索</dd></div></dl></section></div><p class="mode-caveat">概率、天数和等级是虚构实验规则，不是患者加重概率或病程预测。事件和抽取可追溯，不保证模型台词逐字复现。</p><div class="preset-heading"><h3>五个工程预设</h3><p>启动问卷默认展示 mild，也可另选；不从真实用户的聊天推断阶段。</p></div><div class="preset-list"><div><strong>baseline</strong><span>基线对照</span></div><div><strong>preclinical</strong><span>症状前标签</span></div><div><strong>mild</strong><span>轻度示例</span></div><div><strong>moderate</strong><span>中度示例</span></div><div><strong>severe</strong><span>重度示例</span></div></div><p class="section-footnote">baseline 与 preclinical 使用相同的功能控制，不强制可见困难。五个标签都不等同临床诊断或 AA 数字分期，记忆配额与步骤上限也不是人的真实容量。</p></section>
+
+    <section id="boundaries" class="boundary-section" aria-labelledby="boundary-title"><div class="page-width"><p class="eyebrow">TWO LAYERS, ONE TRACEABLE RUN</p><div class="boundary-heading"><h2 id="boundary-title">角色可以不确定，<br>控制层必须可靠。</h2><p>认知约束作用于角色看到什么、怎样表达。规范文件、真实权限和操作结果始终由可靠的控制层维护。</p></div><div class="boundary-diagram"><article class="actor-layer"><span class="layer-tag">ACTOR · AI 角色</span><h3>本轮可见内容 → 对话表现</h3><ul><li>按当前各维约束获取候选记忆</li><li>依据明确场景、线索与支持回应</li><li>语言与情绪表现由宿主模型生成</li></ul><p>不暗用被过滤记录来替角色回答。</p></article><div class="layer-connection" aria-hidden="true"><span>↔</span><small>受控视图<br>可靠操作</small></div><article class="controller-layer"><span class="layer-tag">CONTROLLER · 控制层</span><h3>规范文件 → 核对与管理</h3><ul><li>保留原始记录、来源、时间和修订</li><li>可靠执行纠正、删除、暂停与停止</li><li>核实授权和工具结果，再报告完成</li></ul><p>不因角色健忘而改错文件或谎报成功。</p></article></div><p class="boundary-note">角色检索受限，不等于模型真的遗忘。文件规则无法擦除已见聊天、平台记忆或外部副本；删除时只说明实际清理的范围。</p></div></section>
     <section id="explore" class="explore-section page-width" aria-labelledby="explore-title">
       <div class="section-heading">
-        <div><p class="eyebrow">THE TWELVE DIMENSIONS</p><h2 id="explore-title">从你熟悉的日常开始。</h2></div>
+        <div><p class="eyebrow">THE MECHANISMS · 12 DIMENSIONS</p><h2 id="explore-title">一个角色，十二个观察维度。</h2></div>
         <div class="progress-block" aria-label="本页阅读进度">
           <span><strong id="read-count">0</strong> / 12 已读</span>
           <div class="progress-track" role="progressbar" aria-label="已标记阅读的维度" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><span id="progress-fill"></span></div>
@@ -77,21 +58,14 @@
       <noscript><p class="load-error">此页的筛选和维度详情需要 JavaScript。也可以阅读<a href="https://github.com/HeathHuang-7243/Alzheimer-Simulation/tree/feature/alzheimerAffected/.agents/alzheimer/definitions">仓库中的十二份定义</a>。</p></noscript>
     </section>
 
-    <section id="before" class="before-section" aria-labelledby="before-title">
-      <div class="page-width before-grid">
-        <div><p class="eyebrow">BEFORE YOU SET THE SCENE</p><h2 id="before-title">你可以了解，<br>也可以先留白。</h2><p class="before-intro">这些维度用于丰富虚构角色，并不要求你交出真实个人的健康、家庭或生活资料。</p></div>
-        <div class="principles">
-          <article><span>01</span><div><h3>设定问题都可以跳过</h3><p>如果不提供细节，启动流程会用带有来源标记的虚构内容补齐背景。生成内容可以检查、修改，不会被当作真实个人事实。</p></div></article>
-          <article><span>02</span><div><h3>一个维度的变化，不代表全部改变</h3><p>找词、记忆、动机和情感关切可能分化。疾病研究提供边界，工程参数与角色台词仍需验证；预设不能代表所有患者。</p></div></article>
-          <article><span>03</span><div><h3>这页只负责解释</h3><p>本页不收集角色资料、不启动模拟，也不保存搜索与阅读进度。回到对话后再选择设定；正式启动仍需确认角色卡并按项目要求开启平台记忆。</p></div></article>
-        </div>
-      </div>
-    </section>
-    <section class="evidence-note page-width" aria-labelledby="evidence-title"><span class="evidence-symbol" aria-hidden="true">※</span><div><h2 id="evidence-title">阅读证据，也阅读它的边界。</h2><p>“正常机制”是便于理解的功能说明；AD 相关文献并非完整的正常认知教材。每个维度附有证据卡，标明实际阅读范围与人群限制。模拟预设尚未经临床校准，不能用于诊断、病程预测或现实能力裁决；AI 的角色表达也不证明其具有主观体验。</p><a class="text-button" href="https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/research/literature-review.md" target="_blank" rel="noopener noreferrer">阅读完整研究综述 <span aria-hidden="true">↗</span><span class="sr-only">（新窗口）</span></a></div></section>
+
+    <section id="start" class="start-section" aria-labelledby="start-title"><div class="page-width"><div class="section-heading"><div><p class="eyebrow">START WITH AN AGENT HOST</p><h2 id="start-title">从一次明确的设定开始。</h2></div><a class="text-button" href="https://github.com/HeathHuang-7243/Alzheimer-Simulation/tree/feature/alzheimerAffected" target="_blank" rel="noopener noreferrer">打开项目仓库 ↗<span class="sr-only">（新窗口）</span></a></div><p class="section-intro">在能够读取、持久写入仓库的模型或 agent 宿主中使用。此网站提供项目说明与阅读交互，不运行聊天或调用模型。</p><ol class="start-steps"><li><span>01</span><h3>读取项目入口</h3><p>让宿主模型加载仓库说明、模块与工作流。普通目录不会自行运行。</p></li><li><span>02</span><h3>完成场景问卷</h3><p>选择新建或继续，设置关系、经历、预设与演变。叙事细节可以跳过。</p></li><li><span>03</span><h3>审阅设定卡</h3><p>检查虚构来源、初始条件、时间、参数和新建时的清理范围，再确认。</p></li><li><span>04</span><h3>开启并确认记忆</h3><p>在平台设置开启记忆，再明确告诉模型。模型无法检测开关。</p></li><li><span>05</span><h3>开始角色对话</h3><p>宿主按当前模拟 ID 读写状态，记录事件、表现与实际变化。</p></li></ol><div class="start-note"><strong>两项确认都需要。</strong><p>叙事留白可以生成虚构替代；设定确认和平台记忆自报不能代填。平台记忆与仓库记忆分别运行，开启前者不会自动读取或同步仓库。</p></div><details id="agent-setup" class="developer-details"><summary>给 agent 的启动指令与开发入口</summary><div class="developer-content"><label for="starter-prompt">复制到已打开本仓库、具备文件读写工具的模型宿主：</label><textarea id="starter-prompt" readonly rows="3" spellcheck="false">请读取本仓库 AGENTS.md，带我完成问卷，并在我确认设定和开启平台记忆后，开始新的 Alzheimer-Simulation 模拟。</textarea><div class="copy-row"><button id="copy-starter" type="button">复制启动指令 <span aria-hidden="true">↗</span></button><p id="copy-status" role="status" aria-live="polite">只复制文字，不会在本页启动模拟。</p></div><p>运行入口：<code>scripts/simulation.py</code>；问卷与协议：<a href="https://github.com/HeathHuang-7243/Alzheimer-Simulation/blob/feature/alzheimerAffected/docs/scenario-onboarding.md" target="_blank" rel="noopener noreferrer">scenario-onboarding.md ↗<span class="sr-only">（新窗口）</span></a>。工具实现了文件隔离、校验和演变记录；模型负责按 agents 指令呈现语言与行为。</p></div></details></div></section>
+
+    <section class="continuity-section page-width" aria-labelledby="continuity-title"><div><p class="eyebrow">ONE ID, ONE SIMULATION</p><h2 id="continuity-title">继续一段经历，<br>或确认新的开始。</h2><p>每次独立模拟拥有自己的 ID。换一个聊天窗口，本身不会把它变成一段新模拟。</p></div><div class="continuity-cards"><article><span>RESUME</span><h3>继续同一 ID</h3><p>保留背景、十二个维度与记忆。重新连接宿主时，再确认平台记忆自报，接续当前运行。</p></article><article><span>NEW RUN</span><h3>确认开始新模拟</h3><p>先构建新运行并切换，再清理同一用户上一活跃的新格式运行。旧背景、维度和记忆不继承，也不自动归档；仅准备草稿不会清理。</p></article><p class="time-note">经历发生时间、实际记录时间、故事时钟分别保存，未知日期保持未知。所有运行状态都在仓库目录内，无数据库；新建清理不擦除平台记忆、外部副本、其他用户或项目代码。</p></div></section>
+
+    <section id="research" class="research-section" aria-labelledby="research-title"><div class="page-width research-grid"><div><p class="eyebrow">READ THE RESEARCH</p><h2 id="research-title">理论有出处，<br>设计有边界。</h2><p>研究仓库覆盖病理机制、不同病程、记忆、人格、行为与生活影响，保留设计、样本、阅读范围及相互冲突的结果。</p><div class="research-links"><a href="https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/research/literature-review.md" target="_blank" rel="noopener noreferrer">完整文献综述 ↗<span class="sr-only">（新窗口）</span></a><a href="https://github.com/HeathHuang-7243/Alzheimer/blob/b3138712baf799f0145e5fb3e0c635d4d5dd4d26/references/bibliography.md" target="_blank" rel="noopener noreferrer">Bibliography ↗<span class="sr-only">（新窗口）</span></a><a href="https://github.com/HeathHuang-7243/Alzheimer" target="_blank" rel="noopener noreferrer">Alzheimer 研究仓库 ↗<span class="sr-only">（新窗口）</span></a></div></div><div class="capability-notes"><article><h3><span aria-hidden="true">✓</span> 已实现的文件工具</h3><p>角色设定、来源与修订、独立模拟 ID、十二维状态、记忆管理和可追踪的进展规则。</p></article><article><h3><span aria-hidden="true">↗</span> 需要宿主模型参与</h3><p>理解输入、遵守角色视图、呈现找词与交互变化，并验证提示支持是否改变对话。</p></article><article><h3><span aria-hidden="true">○</span> 尚未确立的效果</h3><p>临床真实性、个体病程预测、照护或训练收益。角色台词和状态值也不能证明 AI 有主观体验。</p></article><p>本页是静态介绍，无实际聊天、模型 API、后台演变或资料提交功能。搜索、示例与阅读进度仅保留在本次打开的页面内存中。</p></div></div></section>
   </main>
-
-  <footer class="page-width site-footer"><div class="footer-brand">ALZHEIMER SIMULATION<span>以证据为起点，为差异留出空间。</span></div><a href="#top">回到页首 ↑</a><p>静态教育页面 · 无账号 · 无追踪 · 无持久化存储</p></footer>
-
+  <footer class="page-width site-footer"><div class="footer-brand">Alzheimer-Simulation<span>以研究为起点，以可检查的机制探索对话。</span></div><a href="#top">回到页首 ↑</a><p>项目介绍与静态阅读 · 无资料提交 · 无追踪 · 无浏览器持久化存储</p></footer>
   <dialog id="dimension-dialog" class="dimension-dialog" aria-labelledby="dialog-title">
     <div class="dialog-header"><span id="dialog-position" class="dialog-position"></span><button type="button" id="close-dialog" class="close-button" aria-label="关闭维度详情"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button></div>
     <div id="dialog-content" class="dialog-content"></div>

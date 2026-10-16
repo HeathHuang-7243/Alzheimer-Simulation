@@ -1,15 +1,17 @@
 {
   "project_id": "appgprj_6ad263c140888191b552e837e1e9dc30",
-  "version_id": "appgprj_6ad263c140888191b552e837e1e9dc30~appgver_e108edf130cc8191a7ef9d89e56d8b7d",
-  "deployment_id": "appgdep_6ad265c94c288191b290a678c9d121b9",
+  "version_id": "appgprj_6ad263c140888191b552e837e1e9dc30~appgver_b9fbfb23515081918a930902bec34946",
+  "deployment_id": "appgdep_6ad27917d74c819195dddf1b15dc9f91",
   "status": "succeeded",
   "url": "https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site",
+  "title": "Alzheimer-Simulation · 场景驱动的认知对话实验",
   "audience": "owner_private",
-  "source_commit": "11388f9c5d544ad6524ef11b33fba5268a9458f3",
+  "source_commit": "3381f643a8bca02479a2ec1228ae079a292f6d87",
   "static_files": [
     "index.html",
     "styles.css",
     "app.js",
+    "project.js",
     "dimensions.json"
   ]
 }

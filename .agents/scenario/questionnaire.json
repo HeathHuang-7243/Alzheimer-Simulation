@@ -3,7 +3,7 @@
   "purpose": "由宿主在聊天中逐步询问；这是问卷定义，不是自动运行的网页表单。",
   "education": {
     "prompt": "你想了解更多吗？",
-    "url": "https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site",
+    "url": "https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site/#explore",
     "local_source": "web/dimensions/index.html",
     "optional": true,
     "if_declined": "跳过说明或补充信息不会阻止准备设定；未提供的叙事内容可随机生成，明确标记为虚构。",

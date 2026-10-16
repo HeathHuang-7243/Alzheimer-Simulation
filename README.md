@@ -9,7 +9,7 @@
 ## 开始使用
 
 1. 在具备文件读写工具的模型/agent宿主中打开本仓库，明确让模型读取根目录 [AGENTS.md](AGENTS.md)。不同宿主的自动发现规则不同；仅创建 `.agents/` 不保证自动加载。
-2. 模型按[场景问卷](docs/scenario-onboarding.md)收集角色背景、关系、经历和演变规则，展示设定卡。补充信息可跳过并随机生成虚构背景，保存来源、种子和版本，支持后续编辑。可先打开[十二维介绍网页](https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site)了解。
+2. 模型按[场景问卷](docs/scenario-onboarding.md)收集角色背景、关系、经历和演变规则，展示设定卡。补充信息可跳过并随机生成虚构背景，保存来源、种子和版本，支持后续编辑。可先打开[项目介绍网页](https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site)了解。
 3. 开始前请用户确认设定，并在平台开启记忆后明确告知；模型无法直接检测或修改平台开关。新建模拟会重置上一活跃run；继续同一ID保留状态。
 4. 确认后，模型按[完整工作流](.agents/skills/cognitive-dialogue/SKILL.md)读取状态、检索记忆、协调各维、对话并写回。新会话重新确认；同一会话不每轮重复询问。
 
@@ -20,7 +20,7 @@
 | 内容 | 位置 |
 | --- | --- |
 | 场景问卷、ID与演变 | [scenario-onboarding.md](docs/scenario-onboarding.md) · [问卷定义](.agents/scenario/questionnaire.json) |
-| 十二维阅读网页 | [在线阅读](https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site) · [源码](web/dimensions/) |
+| 项目介绍与十二维阅读 | [项目首页](https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site) · [十二维机制](https://cognitive-twelve-dimensions.robustdegu4.chatgpt.site/#explore) · [源码](web/dimensions/) |
 | 模型总入口 | [AGENTS.md](AGENTS.md) |
 | 12维清单 | [manifest.json](.agents/manifest.json) |
 | 稳定人格与对话配置 | [persona.json](.agents/config/persona.json) · [dialogue.json](.agents/config/dialogue.json) |

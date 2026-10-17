@@ -1,5 +1,11 @@
 # Alzheimer-Simulation
 
+> **专有项目 · All rights reserved**
+>
+> Copyright © 2026 Heath Huang（GitHub：HeathHuang-7243）。[许可与版权条款](LICENSE)。
+>
+> 公开可见不等于开源授权。除适用法律、平台条款或既有有效授权允许的范围外，使用、运行、复制、修改、分发或商业利用本项目须取得事先书面许可。以下运行说明面向已获授权的使用者。第三方材料与不可受版权保护的内容不据此归本项目所有。
+
 一个由 `AGENTS.md` 指导模型使用的文件式对话认知原型，覆盖记忆、注意、沟通、执行、知觉、人格、情绪、动机、社会认知、自我认知、自主性及交互体验12个维度。当前 `feature/alzheimerAffected` 在母版上增加阿尔茨海默病影响的定义、可选阶段预设和演员记忆视图。
 
 先读[12维受影响定义与review](docs/alzheimer-review.md)，再看[五种阶段配置](.agents/alzheimer/manifest.json)和[行为验收](docs/alzheimer-acceptance.md)。旧版默认仍为 `baseline`。新格式先完成场景问卷、生成独立 `simulation_id`，再确认初始预设和默认/缓慢/固定模式；只按已确认配置演变。`main` 和 `archive/cognitive-baseline-v1` 保存未受影响的母版。
